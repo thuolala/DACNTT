@@ -1,0 +1,26 @@
+<div class="container">
+    <header>
+        <div class="logo">
+          <img src="../../assets/blue-whale.png" alt="Logo" style="width: 32px;" routerLink=""> 
+        </div>
+        <nav>
+          <ul>
+            <li>Xin chào!</li>
+            <li><a routerLink="">Đăng xuất</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="sidebar">
+            <ul>
+                <li><a routerLink="#"><img src="../../assets/calendar.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;">Xem lịch khám</a></li>
+                <li><a routerLink="#"><img src="../../assets/resume.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Xem hồ sơ</a></li>
+            </ul>
+        </div>        
+
+        <div class="main-container">
+            <router-outlet></router-outlet> 
+        </div>
+    </div>
+</div>

@@ -1,42 +1,45 @@
 <div class="logup-container">
-    <div> 
-      <a routerLink=""> <button class="close-button">X</button></a>
+  <div>
+    <a routerLink="">
+      <button class="close-button">X</button>
+    </a>
   </div>
-  
-    <form method="post" (submit)="logup()"> 
-      <h2 >Đăng ký</h2>
 
-      <div class="form-group">
-        <input type="text" class="form-control" id="hoten" [(ngModel)]="hoten" name="hoten" placeholder="Họ tên" required>
-      </div>
+  <form method="post" (submit)="logup()">
+    <h2>Đăng ký</h2>
 
-      <div class="form-group">
-        <input type="text" class="form-control" id="sdt" [(ngModel)]="sdt" name="sdt" placeholder="Số điện thoại" required>
-      </div>
-      
-      <div class="form-group">
-        <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="Email" required>
-      </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="hoten" [(ngModel)]="hoten" name="hoten" placeholder="Họ tên" required>
+    </div>
 
-      <div class="form-group">
-        <label><input type="checkbox" [(ngModel)]="nam" (change)="onGenderChange(true)" name="gioitinh" value="0" checked> Nam</label>
-        <label><input type="checkbox" [(ngModel)]="nu" (change)="onGenderChange(false)" name="gioitinh" value="1"> Nữ</label>
-      </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="sdt" [(ngModel)]="sdt" name="sdt" placeholder="Số điện thoại" required>
+    </div>
 
-      <div class="form-group ">
-        <input type="number" class="form-control" id="namsinh" [(ngModel)]="namsinh" name="namsinh" placeholder="Năm sinh" required>
-      </div>
+    <div class="form-group">
+      <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+    </div>
 
-      <div class="form-group">
-        <input type="text" class="form-control" id="diachi" [(ngModel)]="diachi" name="diachi" placeholder="Địa chỉ" required>
-      </div>
+    <div class="checkbox-group">
+      <label for="nam">Nam</label>
+      <input type="checkbox" id="nam" [(ngModel)]="nam" (change)="onGenderChange(true)" name="gioitinh" value="0">
 
-      <div class="form-group">
-        <input type="password" class="form-control" id="matkhau" [(ngModel)]="matkhau" name="matkhau" placeholder="Mật khẩu" required>
-      </div>
+      <label for="nu">Nữ</label>
+      <input type="checkbox" id="nu" [(ngModel)]="nu" (change)="onGenderChange(false)" name="gioitinh" value="1">
+    </div>
 
-      <button type="submit" class="logup-button">Đăng ký</button>
-    </form>
+    <div class="form-group">
+      <input type="number" class="form-control" id="namsinh" [(ngModel)]="namsinh" name="namsinh" placeholder="Năm sinh" required>
+    </div>
 
-  </div>
-  
+    <div class="form-group">
+      <textarea class="form-control" id="diachi" [(ngModel)]="diachi" name="diachi" placeholder="Địa chỉ" required></textarea> 
+    </div>
+
+    <div class="form-group">
+      <input type="password" class="form-control" id="matkhau" [(ngModel)]="matkhau" name="matkhau" placeholder="Mật khẩu" required>
+    </div>
+
+    <button type="submit" class="logup-button">Đăng ký</button>
+  </form>
+</div>

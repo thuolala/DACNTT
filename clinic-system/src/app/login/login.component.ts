@@ -21,7 +21,7 @@ export class LoginComponent {
                 (response: string) => {
                     this.loginMessage = response;
                     if(response === "Login Success!"){
-                      this.router.navigate(["/dashboard"]);
+                      this.router.navigate(["/user"]);
                     }
                 },
                 (error) => {

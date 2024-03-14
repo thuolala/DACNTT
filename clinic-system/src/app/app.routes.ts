@@ -4,12 +4,18 @@ import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogupComponent } from './logup/logup.component';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
 
 export const routes: Routes = [
-  // { path: '', component: AppComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'logup', component: LogupComponent },
-  {path: 'dashboard', component: DashboardComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, 
+  children: [
+    { path: 'login', component: LoginComponent },
+    { path: 'logup', component: LogupComponent }
+  ]},
+  { path: 'user', component: UserComponent },
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
