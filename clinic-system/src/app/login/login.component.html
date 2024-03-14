@@ -1,0 +1,19 @@
+<div class="login-container">
+  <div> 
+    <a routerLink=""> <button class="close-button">X</button></a>
+</div>
+
+  <form method="post" (submit)="login()"> 
+    <h2 >Đăng nhập</h2>
+    <div class="form-group">
+      <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="matkhau" [(ngModel)]="matkhau" name="matkhau" placeholder="Mật khẩu" required>
+    </div>
+    <button type="submit" class="login-button">Đăng nhập</button>
+  <div style="text-align: center;"> 
+    <a style="color: #52CBFF; " routerLink=""> Quên mật khẩu?</a>
+  </div>
+  </form>
+</div>
