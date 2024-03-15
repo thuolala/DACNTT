@@ -1,13 +1,74 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
 <div class="datlich-modal-container"> 
     <div mat-dialog-content>
-        <h2>Đặt lịch khám</h2>
-        <p>{{ data }}</p>
+        <h2 style="text-align: center;">Đặt lịch khám</h2>
+        <!-- <p>{{ data }}</p> -->
 
-        <div>
-            
-        </div>
-      </div>
-      <div mat-dialog-actions>
-        <button mat-button (click)="onClose()">Close</button>
-      </div>         
+        <form method="post">
+
+            <div class="form-group">
+                <label for="loaicakham">Loại ca khám: </label>
+                <input type="text" class="form-control" id="loaicakham"  name="loaicakham"  disabled>  
+  
+            </div>
+            <div class="form-group">
+                <label for="bacsi">Bác sĩ: </label>
+                <input type="text" class="form-control" id="bacsi"  name="bacsi"  disabled>  
+  
+            </div>
+
+            <div class="form-group">
+                <label for="nguoidung">Bệnh nhân: </label>
+                <input type="text" class="form-control" id="nguoidung"  name="nguoidung" >    
+            </div>
+
+            <div class="form-group">
+                <label for="sdt">SĐT: </label>
+                <input type="text" class="form-control" id="sdt"  name="sdt" >    
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="email" class="form-control" id="email"  name="email" >    
+            </div>
+
+            <div class="form-group">
+                <label for="namsinh">Năm sinh: </label>
+                <input type="number" class="form-control" id="namsinh"  name="namsinh" >    
+            </div>
+
+            <div class="form-group">
+                <label for="lsbenhly">Lịch sử bệnh lý: </label>
+                <textarea type="lsbenhly" class="form-control" id="lsbenhly"  name="lsbenhly"  placeholder="Liệt kê"></textarea>  
+            </div>
+
+            <div class="form-group">
+                <label for="ngaykham">Ngày khám: </label>
+                <input type="date" class="form-control" id="ngaykham"  name="ngaykham" >
+            </div>
+
+            <div class="form-group">
+                <label for="giokham">Giờ khám: </label>
+                <input type="time" class="form-control" id="giokham"  name="giokham" >
+            </div>
+
+            <div class="form-group">
+                <label for="chuandoan">Chuẩn đoán: </label>
+                <textarea class="form-control" id="chuandoan"  name="chuandoan"  disabled></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="dieutri">Điều trị: </label>
+                <textarea  class="form-control" id="dieutri"  name="dieutri"  disabled></textarea>
+            </div>
+
+        </form>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onClose()" class="close-button">X</button>
+
+        <button class="datlich-btn" mat-button>Đặt lịch</button>
+        <button class="huy-btn" mat-button>Hủy</button>
+    </div>         
 </div>

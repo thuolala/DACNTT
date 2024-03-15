@@ -9,6 +9,82 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: auto;
+    justify-content: space-between;
+
+    height: 90%; 
+    overflow-y: auto; 
+}
+
+.close-button{
+    border: none;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+input, textarea{
+    float: inline-end;
+    width: 350px;
+}
+
+input{
+    height: 30px;
+}
+
+textarea{
+    height: 50px;
+}
+
+label {
+    width: 150px; 
+    display: inline-block;
+    text-align: left;
+    background-color: transparent;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.datlich-btn {
+    margin-right: 20px;
+    width: 25%; 
+    background-color: #52cbff; 
+    color: white; 
+    border: 1px solid #52cbff; 
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.datlich-btn:hover {
+    background-color: black;
+}
+
+.huy-btn {
+    width: 25%; 
+    background-color: #8f8f8f; 
+    color: white; 
+    border: 1px solid #52cbff; 
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.huy-btn:hover {
+    background-color: black;
 }
   
   
