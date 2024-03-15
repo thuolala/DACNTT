@@ -19,7 +19,12 @@ public class BenhNhanController {
     private BenhNhanRepository bnRepository;
 
     @GetMapping("/api/benhnhan")
-    public List<BenhNhan> geTaiKhoans() {
+    public List<BenhNhan> getBenhNhans() {
         return bnRepository.findAll();
+    }
+
+    @GetMapping("/api/benhnhan/{email}")
+    public BenhNhan getBenhNhanByEmail(@PathVariable String email) {
+        return bnRepository.findByEmail(email);
     }
 }

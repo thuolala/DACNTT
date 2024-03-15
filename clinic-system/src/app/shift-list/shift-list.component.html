@@ -1,0 +1,29 @@
+<div class="container custom">
+    <div class="search-filters">
+        <form>
+            <input type="text" placeholder="Nhập để tìm kiếm..." [(ngModel)]="searchTerm" name="searchTerm">
+            <select [(ngModel)]="selectedFilter" name="selectedFilter">
+                <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+            </select>
+            <!-- <button type="button" (click)="applyFilters()">Lọc</button> -->
+        </form>
+    </div>
+    
+    <div class="row card-container">
+        <div *ngFor="let cakham of cakhamList" class="card">
+            <div class="card-header">
+                <h2>{{ cakham.loaicakham }}</h2>
+                <p class="text-1">Chuyên khoa: {{ cakham.chuyenkhoa }}</p>
+            </div>
+            <div class="card-body">
+                <p class="text-2">Bác sĩ: {{ cakham.bacsi }}</p>
+                <img class="img-box" src="../../assets/doctor.png" alt="Avatar">
+            </div>
+            <div class="card-footer">
+                <button class="card-btn" mat-button (click)="openModal()">Đặt lịch</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

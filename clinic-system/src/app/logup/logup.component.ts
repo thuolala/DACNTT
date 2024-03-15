@@ -38,7 +38,7 @@ export class LogupComponent {
       .subscribe(
         (response: string) => {
           if ( response === "Logup Success!") {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/dang-nhap']);
           }
         },
         (error) => {

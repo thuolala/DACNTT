@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BenhNhanRepository extends JpaRepository<BenhNhan, Long>{
     Optional<BenhNhan> findById(Long id);
-    Optional<BenhNhan> findBySdt(String sdt);
-    Optional<BenhNhan> findByEmail(String email);
+    BenhNhan findBySdt(String sdt);
+    BenhNhan findByEmail(String email);
     List<BenhNhan> findAll();
 }

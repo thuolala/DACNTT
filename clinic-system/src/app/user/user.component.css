@@ -12,6 +12,7 @@
 }
 
 header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,8 +58,13 @@ nav ul li {
     background-color: #52cbff;
     border-radius: 20px;
     padding: 20px;
-    width: auto;
-    transition: width 0.5s;
+    transition: width 0.5s; 
+    display: inline-block;
+
+    width: 30vw; 
+    height: auto; 
+    vertical-align: top; 
+    box-sizing: content-box; 
 }
 
 .sidebar ul {
@@ -82,11 +88,18 @@ nav ul li {
 }
 
 .main-container {
+    width: auto;
+    height: auto;
     flex-grow: 1; 
     padding: 20px;
     border: 1px solid #52cbff;
     margin-left: 20px;
     border-radius: 20px;
+
+    overflow: hidden; 
+    display: inline-block; 
+    vertical-align: top; 
+    box-sizing: border-box; 
 }
 
 @media only screen and (max-width: 768px) {

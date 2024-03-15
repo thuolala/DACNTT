@@ -6,16 +6,21 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogupComponent } from './logup/logup.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
+import { ShiftListComponent } from './shift-list/shift-list.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, 
+  { path: '', redirectTo: '/trang-chu', pathMatch: 'full' },
+  { path: 'trang-chu', component: HomeComponent, 
   children: [
-    { path: 'login', component: LoginComponent },
-    { path: 'logup', component: LogupComponent }
+    { path: 'dang-nhap', component: LoginComponent },
+    { path: 'dang-ky', component: LogupComponent }
   ]},
-  { path: 'user', component: UserComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'nguoi-dung', component: UserComponent,
+  children: [
+    { path: 'ca-kham', component: ShiftListComponent }
+  ]
+ },
+  { path: 'dashboard', component: DashboardComponent },
 ];
 
 @NgModule({

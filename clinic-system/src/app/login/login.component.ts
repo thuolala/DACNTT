@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from './login.service';
 import { Router } from '@angular/router';
+import { EmailService } from 'app/shared/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
     matkhau: string = '';
     loginMessage: string = '';
 
-    constructor(private authService: AuthenticationService, private router: Router) { }
+    constructor(private authService: AuthenticationService, private router: Router, private emailService: EmailService) { }
 
     login() {
         this.authService.login(this.email, this.matkhau)
@@ -21,7 +22,11 @@ export class LoginComponent {
                 (response: string) => {
                     this.loginMessage = response;
                     if(response === "Login Success!"){
-                      this.router.navigate(["/user"]);
+                        this.emailService.setEmail(this.email);
+                        this.router.navigate(["/nguoi-dung/ca-kham"]);
+                    }
+                    else{
+                        this.router.navigate(["/trang-chu/dang-nhap"]);
                     }
                 },
                 (error) => {
