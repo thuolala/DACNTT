@@ -14,17 +14,35 @@ public class HoSoCaKham {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, name = "loaicakham")
+    private String loaicakham;
+
+    @Column(nullable = false, name = "bacsi")
+    private String bacsi;
+
+    @Column(nullable = false, name = "id_bacsi")
+    private int idBacsi;
+
     @Column(nullable = false, name = "id_cakham")
-    private Long idCakham;
+    private int idCakham;
 
     @Column(nullable = false, name = "id_benhnhan")
-    private Long idBenhnhan;
+    private int idBenhnhan;
     
     @Column(nullable = false, name = "benhnhan")
     private String benhnhan;
 
+    @Column(nullable = false, name = "sdt")
+    private String sdt;
+
+    @Column(nullable = false, name = "email")
+    private String email;
+
+    @Column(nullable = false, name = "namsinh")
+    private int namsinh;
+
     @Column(nullable = true, name = "lichsu_benhly")
-    private String lichsu_benhly;
+    private String lichsuBenhly;
 
     @Column(nullable = true, name = "chuandoan")
     private String chuandoan;
@@ -38,21 +56,52 @@ public class HoSoCaKham {
     @Column(nullable = false, name = "giokham")
     private String giokham;
 
+    @Column(nullable = false, name = "trangthai")
+    private int trangthai;
+
     //get 
     public Long getId(){
         return this.id; 
     }
 
-    public Long getIdCakham(){
+    public String getLoaicakham() {
+        return this.loaicakham;
+    }
+
+    public String getBacsi() {
+        return this.bacsi;
+    }
+
+    public int getIdBacsi() {
+        return this.idBacsi;
+    }
+    
+    public int getIdCakham(){
         return this.idCakham; 
     }
 
-    public Long getIdBenhnhan(){
+    public int getIdBenhnhan(){
         return this.idBenhnhan; 
     }
 
+    public String getBenhnhan(){
+        return this.benhnhan;
+    }
+
+    public String getSdt(){
+        return this.sdt;
+    }
+ 
+    public String getEmail(){
+        return this.email;
+    }
+
+    public int getNamsinh(){
+        return this.namsinh;
+    }
+
     public String getLichsu(){
-        return this.lichsu_benhly;
+        return this.lichsuBenhly;
     }
 
     public String getChuandoan(){
@@ -71,17 +120,49 @@ public class HoSoCaKham {
         return this.giokham;
     }
 
-    //set 
-    public void setIdCakham(Long id_cakham){
-        this.idCakham = id_cakham;
+    public int getTrangthai(){
+        return this.trangthai; 
     }
 
-    public void setIdBenhnhan(Long id_benhnhan){
-        this.idBenhnhan = id_benhnhan;
+    //set 
+    public void setLoaicakham(String loaick){
+        this.loaicakham = loaick; 
+    }
+
+    public void setBacsi(String bs){
+        this.bacsi = bs; 
+    }
+
+    public void setIdBacsi(int idBacsi){
+        this.idBacsi = idBacsi; 
+    }
+
+    public void setIdCakham(int idCakham){
+        this.idCakham = idCakham;
+    }
+
+    public void setIdBenhnhan(int idBenhnhan){
+        this.idBenhnhan = idBenhnhan;
+    }
+
+    public void setBenhnhan(String bn){
+        this.benhnhan = bn; 
+    }
+
+    public void setSdt(String sdt){
+        this.sdt = sdt;
+    }
+ 
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public void setNamsinh(int namsinh){
+        this.namsinh = namsinh;
     }
 
     public void setLichsu(String lichsu_benhly){
-        this.lichsu_benhly = lichsu_benhly;
+        this.lichsuBenhly = lichsu_benhly;
     }
 
     public void setChuandoan(String chuandoan){
@@ -99,6 +180,9 @@ public class HoSoCaKham {
     public void setGiokham(String giokham) {
         this.giokham = giokham;
     }
-    
+
+    public void setTrangthai(int tt){
+        this.trangthai = tt;
+    }  
 }
 

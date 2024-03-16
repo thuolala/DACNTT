@@ -13,6 +13,7 @@ export class LoginComponent {
     email: string = '';
     matkhau: string = '';
     loginMessage: string = '';
+    thongbao: string = '';
 
     constructor(private authService: AuthenticationService, private router: Router, private emailService: EmailService) { }
 
@@ -21,12 +22,23 @@ export class LoginComponent {
             .subscribe( 
                 (response: string) => {
                     this.loginMessage = response;
-                    if(response === "Login Success!"){
+                    if(response === "Benh nhan"){
                         this.emailService.setEmail(this.email);
                         this.router.navigate(["/nguoi-dung/ca-kham"]);
                     }
+                    else if(response === "Admin"){
+                        this.router.navigate(["/admin"]);
+                    }
+                    else if(response === "Bac si"){
+                        this.router.navigate(["/bac-si"]);
+                    }
+                    else if(response === "Tai khoan khong ton tai"){
+                        this.thongbao = "Tài khoản không tồn tại!"
+                        alert("Tài khoản không tồn tại!");
+                        // this.router.navigate(["/trang-chu/dang-nhap"]);
+                    }
                     else{
-                        this.router.navigate(["/trang-chu/dang-nhap"]);
+
                     }
                 },
                 (error) => {

@@ -21,11 +21,11 @@ public class TaiKhoanController {
         return tkRepository.findAll();
     }
 
-    // @GetMapping("/api/taikhoan/{id}")
-    // public Optional<TaiKhoan> getTaiKhoanById(@PathVariable Long id) {
-    //     Optional<TaiKhoan> tk = tkRepository.findById(id);
-    //     return tk;
-    // }
+    @GetMapping("/api/taikhoan/{id}")
+    public Optional<TaiKhoan> getTaiKhoanById(@PathVariable Long id) {
+        Optional<TaiKhoan> tk = tkRepository.findById(id);
+        return tk;
+    }
 
     // @GetMapping("/api/taikhoan/{sdt}")
     // public Optional<TaiKhoan>  getTaiKhoanBySdt(@PathVariable String sdt) {

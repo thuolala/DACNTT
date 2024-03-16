@@ -24,13 +24,19 @@ public class LoginController {
     public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
         String email = credentials.get("email");
         String matkhau = credentials.get("matkhau");
-        boolean isAuthenticated = loginService.authenticate(email, matkhau);
+        boolean isAuthenticated = loginService.authenticateBN(email, matkhau);
 
         if (isAuthenticated) {
-            System.out.println("----------------SUCCESS-----------");
-            return ResponseEntity.ok().body("Login Success!"); 
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Phone not exists"); 
+            return ResponseEntity.ok().body("Benh nhan"); 
+        }
+        else if(loginService.authenticateAD(email, matkhau)){
+            return ResponseEntity.ok().body("Admin"); 
+        }
+        else if(loginService.authenticateBS(email, matkhau)){
+            return ResponseEntity.ok().body("Bac si"); 
+        }
+        else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Tai khoan khong ton tai"); 
         }
     }
 }

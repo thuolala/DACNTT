@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label for="bacsi">Bác sĩ: </label>
-                <input type="text" class="form-control" id="bacsi"  name="bacsi" value="{{ data.cakham.bacsi }}" disabled>  
+                <input type="text" class="form-control" id="bacsi" #bacsiInput name="bacsi" value="{{ data.cakham.bacsi }}" disabled>  
   
             </div>
 
@@ -25,42 +25,42 @@
 
             <div class="form-group">
                 <label for="sdt">SĐT: </label>
-                <input type="text" class="form-control" id="sdt"  name="sdt" value="{{ data.benhnhan.sdt }}" required>    
+                <input type="text" class="form-control" id="sdt" #sdtInput name="sdt" value="{{ data.benhnhan.sdt }}" required>    
             </div>
 
             <div class="form-group">
                 <label for="email">Email: </label>
-                <input type="email" class="form-control" id="email"  name="email" value="{{ data.benhnhan.email }}" required>    
+                <input type="email" class="form-control" id="email"  name="email" value="{{ data.benhnhan.email }}" disabled>    
             </div>
 
             <div class="form-group">
                 <label for="namsinh">Năm sinh: </label>
-                <input type="number" class="form-control" id="namsinh"  name="namsinh" value="{{ data.benhnhan.namsinh }}" required>    
+                <input type="number" class="form-control" id="namsinh" #namsinhInput name="namsinh" value="{{ data.benhnhan.namsinh }}" required>    
             </div>
 
             <div class="form-group">
                 <label for="lsbenhly">Lịch sử bệnh lý: </label>
-                <textarea type="lsbenhly" class="form-control" id="lsbenhly" name="lsbenhly"  placeholder="Liệt kê"></textarea>  
+                <textarea #lsbenhlyInput class="form-control" id="lsbenhly" name="lsbenhly" placeholder="Liệt kê"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="ngaykham">Ngày khám: </label>
-                <input type="date" class="form-control" id="ngaykham"   name="ngaykham" required>
+                <input type="date" class="form-control" id="ngaykham" #ngaykhamInput  name="ngaykham" required>
             </div>
 
             <div class="form-group">
                 <label for="giokham">Giờ khám: </label>
-                <input type="time" class="form-control" id="giokham" name="giokham" required>
+                <input type="time" class="form-control" id="giokham" #giokhamInput name="giokham" required>
             </div>
 
             <div class="form-group">
                 <label for="chuandoan">Chuẩn đoán: </label>
-                <textarea class="form-control" id="chuandoan"  name="chuandoan" placeholder="Bác sĩ nhập vào đây..." disabled></textarea>
+                <textarea class="form-control" id="chuandoan" #chuandoanInput name="chuandoan" placeholder="Bác sĩ nhập vào đây..." disabled></textarea>
             </div>
 
             <div class="form-group">
                 <label for="dieutri">Điều trị: </label>
-                <textarea  class="form-control" id="dieutri"  name="dieutri" placeholder="Bác sĩ nhập vào đây..." disabled></textarea>
+                <textarea  class="form-control" id="dieutri" #dieutriInput name="dieutri" placeholder="Bác sĩ nhập vào đây..." disabled></textarea>
             </div>
 
             <div class="form-group">
@@ -72,8 +72,21 @@
     </div>
     <div mat-dialog-actions>
         <button mat-button (click)="onClose()" class="close-button">X</button>
+        
+        <button class="datlich-btn" mat-button (click)="send()" #dlBtn [disabled]="dlBtnDisabled" >Đặt lịch</button>
+        <button class="huy-btn"  mat-button >Hủy</button>
 
-        <button class="datlich-btn" mat-button (click)="send()">Đặt lịch</button>
-        <button class="huy-btn" mat-button>Hủy</button>
-    </div>         
+
+
+        <span *ngIf="successMessage" class="success-message">{{ successMessage }}</span>
+    </div> 
+
+    <div class="qr-container">
+        <!-- <img #qrCode> -->
+
+        <qrcode (qrCodeURL)="onChangeURL($event)" [qrdata]="id_hsck" [width]="200" [errorCorrectionLevel]="'M'"></qrcode>
+        
+        <a [href]="qrCodeDownloadLink" download="qrcode"><button class="download-btn" >Tải về</button> </a>
+    </div>
+    
 </div>

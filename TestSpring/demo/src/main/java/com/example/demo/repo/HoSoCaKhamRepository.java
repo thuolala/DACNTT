@@ -9,8 +9,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface HoSoCaKhamRepository extends JpaRepository<HoSoCaKham, Long> {
     Optional<HoSoCaKham> findById(Long id);
-    List<HoSoCaKham> findByIdCakham(Long id_cakham);
-    List<HoSoCaKham> findByIdBenhnhan(Long id_benhnhan);
+    List<HoSoCaKham> findByBacsi(String bacsi);
+    List<HoSoCaKham> findByIdBacsi(int idBacsi);
+    List<HoSoCaKham> findByIdCakham(int id_cakham);
+    List<HoSoCaKham> findByIdBenhnhan(int id_benhnhan);
     List<HoSoCaKham> findByNgaykham(String ngaykham);
     List<HoSoCaKham> findByGiokham(String giokham);
     List<HoSoCaKham> findAll();

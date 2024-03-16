@@ -7,6 +7,8 @@ import { LogupComponent } from './logup/logup.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { ShiftListComponent } from './shift-list/shift-list.component';
+import { DoctorComponent } from './doctor/doctor.component';
+import { AdminComponent } from './admin/admin.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/trang-chu', pathMatch: 'full' },
@@ -21,6 +23,8 @@ export const routes: Routes = [
   ]
  },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'bac-si', component: DoctorComponent },
+  { path: 'admin', component: AdminComponent },
 ];
 
 @NgModule({

@@ -8,6 +8,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DatlichComponent } from 'app/datlich/datlich.component';
 import { BenhNhanService } from 'app/shared/shared-benhnhan.service';
 import { BenhNhan } from 'app/user/benhnhan.model';
+import { BacSi } from 'app/doctor/bacsi.model';
+import { BacSiService } from 'app/doctor/doctor.service';
 
 @Component({
   selector: 'app-shift-list',
@@ -38,8 +40,16 @@ export class ShiftListComponent {
     namsinh: 0,
     diachi: ''
   };
+
+  bs: BacSi = {
+    id: 0,
+    hoten: '',
+    sdt: '',
+    email: '',
+    matkhau: ''
+  };
   
-  constructor(private http: HttpClient, public dialog: MatDialog, private benhNhanService: BenhNhanService) { }
+  constructor(private http: HttpClient, public dialog: MatDialog, private benhNhanService: BenhNhanService, private bsService: BacSiService) { }
   
   fetchOptions() {
     this.http.get<string[]>('http://localhost:8080/api/loaicakham')
@@ -64,8 +74,10 @@ export class ShiftListComponent {
 
   openModal(cakham : CaKham): void {
     this.bn = this.benhNhanService.getBenhNhan()
+    // this.bs = this.bsService.getBacSi(cakham.idBacsi);
     const benhnhan = this.bn;
-    console.log(benhnhan);
+    // const bacsi = this.bs; 
+
     const dialogRef = this.dialog.open(DatlichComponent,
       {data: {cakham, benhnhan}}
       );
