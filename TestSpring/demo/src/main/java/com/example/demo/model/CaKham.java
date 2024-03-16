@@ -26,6 +26,9 @@ public class CaKham {
     @Column(nullable = false, name = "bacsi")
     private String bacsi;
 
+    @Column(nullable = false, name = "chiphi")
+    private String chiphi;
+
     // @Column(nullable = false, name = "ngaykham")
     // private String ngaykham;
 
@@ -53,6 +56,10 @@ public class CaKham {
         return this.bacsi;
     }
 
+    public String getChiphi(){
+        return this.chiphi;
+    }
+
     // public String getNgayKham() {
     //     return this.ngaykham;
     // }
@@ -76,6 +83,10 @@ public class CaKham {
 
     public void setBacsi(String bacsi) {
         this.bacsi = bacsi;
+    }
+    
+    public void setChiphi(String chiphi) {
+        this.chiphi = chiphi;
     }
 
     // public void setNgayKham(String ngaykham) {

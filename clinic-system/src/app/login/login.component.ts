@@ -18,7 +18,7 @@ export class LoginComponent {
 
     login() {
         this.authService.login(this.email, this.matkhau)
-            .subscribe(
+            .subscribe( 
                 (response: string) => {
                     this.loginMessage = response;
                     if(response === "Login Success!"){

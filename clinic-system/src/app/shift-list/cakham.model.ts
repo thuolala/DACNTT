@@ -3,6 +3,7 @@ export interface CaKham {
     loaicakham: string;
     chuyenkhoa: string,
     idBacsi: number, 
-    bacsi: number
+    bacsi: number,
+    chiphi: string
   }
   

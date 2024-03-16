@@ -96,6 +96,11 @@
   color: gray;
 }
 
+.text-3{
+  color: #52cbff;
+  font-weight: bold;
+}
+
 .card-btn:hover {
   background-color: black;
 }

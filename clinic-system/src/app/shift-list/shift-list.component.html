@@ -17,10 +17,11 @@
             </div>
             <div class="card-body">
                 <p class="text-2">Bác sĩ: {{ cakham.bacsi }}</p>
+                <h3 class="text-3">{{ cakham.chiphi }} đồng</h3>
                 <img class="img-box" src="../../assets/doctor.png" alt="Avatar">
             </div>
             <div class="card-footer">
-                <button class="card-btn" mat-button (click)="openModal()">Đặt lịch</button>
+                <button class="card-btn" mat-button (click)="openModal(cakham)">Đặt lịch</button>
             </div>
         </div>
     </div>

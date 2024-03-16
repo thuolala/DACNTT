@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { CaKham } from './cakham.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DatlichComponent } from 'app/datlich/datlich.component';
+import { BenhNhanService } from 'app/shared/shared-benhnhan.service';
+import { BenhNhan } from 'app/user/benhnhan.model';
 
 @Component({
   selector: 'app-shift-list',
@@ -26,8 +28,18 @@ export class ShiftListComponent {
   //   idBacsi: 0,
   //   bacsi: 0
   // };
+
+  bn: BenhNhan = {
+    id: 0,
+    hoten: '',
+    sdt: '',
+    email: '',
+    gioitinh: 0,
+    namsinh: 0,
+    diachi: ''
+  };
   
-  constructor(private http: HttpClient, public dialog: MatDialog) { }
+  constructor(private http: HttpClient, public dialog: MatDialog, private benhNhanService: BenhNhanService) { }
   
   fetchOptions() {
     this.http.get<string[]>('http://localhost:8080/api/loaicakham')
@@ -43,9 +55,19 @@ export class ShiftListComponent {
       });
   }
 
-  openModal(): void {
+  // fetchBenhnhan() {
+  //   this.http.get<CaKham[]>('http://localhost:8080/api/benhnhan/{email}')
+  //     .subscribe(data => {
+  //       this.cakhamList = data;
+  //     });
+  // }
+
+  openModal(cakham : CaKham): void {
+    this.bn = this.benhNhanService.getBenhNhan()
+    const benhnhan = this.bn;
+    console.log(benhnhan);
     const dialogRef = this.dialog.open(DatlichComponent,
-      {data: 'AA'}
+      {data: {cakham, benhnhan}}
       );
 
     dialogRef.afterClosed().subscribe(result => {

@@ -5,6 +5,7 @@ import { EmailService } from 'app/shared/shared.service';
 import { UserService } from './user.service';
 import { BenhNhan } from './benhnhan.model';
 import { ShiftListComponent } from 'app/shift-list/shift-list.component';
+import { BenhNhanService } from 'app/shared/shared-benhnhan.service';
 
 @Component({
   selector: 'app-user',
@@ -25,7 +26,7 @@ export class UserComponent implements OnInit{
     diachi: ''
   };
   
-  constructor(private emailService: EmailService, private userService: UserService) {}
+  constructor(private emailService: EmailService, private userService: UserService, private benhNhanService: BenhNhanService) {}
 
   ngOnInit() {
     this.email = this.emailService.getEmail();
@@ -37,7 +38,7 @@ export class UserComponent implements OnInit{
       .subscribe(
         (data: BenhNhan) => {
           this.benhnhan = data;
-          console.log('BenhNhan:', this.benhnhan);
+          this.benhNhanService.setBenhNhan(data);
         },
         (error) => {
           console.error('Error:', error);
