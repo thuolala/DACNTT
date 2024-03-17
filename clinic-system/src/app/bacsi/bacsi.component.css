@@ -61,7 +61,8 @@ nav ul li {
     transition: width 0.5s; 
     display: inline-block;
 
-    width: 30vw; 
+    width: auto; 
+    min-width: 150px;
     height: auto; 
     vertical-align: top; 
     box-sizing: content-box; 
@@ -104,7 +105,7 @@ nav ul li {
 
 @media only screen and (max-width: 768px) {
     .sidebar {
-        width: auto; 
+        max-width: 50px;
     }
 
     .sidebar ul li a {

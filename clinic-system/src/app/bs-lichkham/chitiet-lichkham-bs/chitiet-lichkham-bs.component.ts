@@ -12,8 +12,8 @@ import { CTLKServiceBS } from './chitiet-lichkham-bs.service';
   selector: 'app-chitiet-lichkham',
   standalone: true,
   imports: [FormsModule, CommonModule, QRCodeModule],
-  templateUrl: './chitiet-lichkham.component.html',
-  styleUrl: './chitiet-lichkham.component.css'
+  templateUrl: './chitiet-lichkham-bs.component.html',
+  styleUrl: './chitiet-lichkham-bs.component.css'
 })
 export class ChitietLichkhamComponentBS implements OnInit{
   successMessage: string = '';
@@ -140,10 +140,14 @@ export class ChitietLichkhamComponentBS implements OnInit{
       //   dieutri: this.dieutri, trangthai: this.trangthai};
 
       this.hsck = this.data.hscckham;
-      this.hsck.benhnhan = this.benhnhan; 
-      this.hsck.sdt = this.sdt; 
-      this.hsck.namsinh = this.namsinh; 
+      // this.hsck.benhnhan = this.benhnhan; 
+      // this.hsck.sdt = this.sdt; 
+      // this.hsck.namsinh = this.namsinh; 
       this.hsck.lichsuBenhly = this.lsbenhly;
+      this.hsck.chuandoan = this.chuandoan; 
+      this.hsck.dieutri = this.dieutri;
+      // set trang thai =1 --> hoan tat ca kham 
+      this.hsck.trangthai = 1; 
 
     // send put req 
     this.ctlkService.capnhat(this.hsck)

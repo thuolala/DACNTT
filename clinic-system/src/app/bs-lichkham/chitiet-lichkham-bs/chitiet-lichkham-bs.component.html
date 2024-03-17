@@ -17,12 +17,12 @@
 
             <div class="form-group">
                 <label for="benhnhan">Bệnh nhân: </label>
-                <input type="text" class="form-control" id="benhnhan" #benhnhanInput name="benhnhan" value="{{ data.hscckham.benhnhan }}" required>    
+                <input type="text" class="form-control" id="benhnhan" #benhnhanInput name="benhnhan" value="{{ data.hscckham.benhnhan }}" disabled>    
             </div>
 
             <div class="form-group">
                 <label for="sdt">SĐT: </label>
-                <input type="text" class="form-control" id="sdt" #sdtInput name="sdt" value="{{ data.hscckham.sdt }}" required>    
+                <input type="text" class="form-control" id="sdt" #sdtInput name="sdt" value="{{ data.hscckham.sdt }}" disabled>    
             </div>
 
             <div class="form-group">
@@ -32,7 +32,7 @@
 
             <div class="form-group">
                 <label for="namsinh">Năm sinh: </label>
-                <input type="number" class="form-control" id="namsinh" #namsinhInput name="namsinh" value="{{ data.hscckham.namsinh }}" required>    
+                <input type="number" class="form-control" id="namsinh" #namsinhInput name="namsinh" value="{{ data.hscckham.namsinh }}" disabled>    
             </div>
 
             <div class="form-group">
@@ -54,12 +54,12 @@
 
             <div class="form-group">
                 <label for="chuandoan">Chuẩn đoán: </label>
-                <textarea class="form-control" id="chuandoan" #chuandoanInput name="chuandoan" placeholder="Bác sĩ nhập vào đây..." disabled></textarea>
+                <textarea class="form-control" id="chuandoan" #chuandoanInput name="chuandoan" placeholder="Bác sĩ nhập vào đây..." ></textarea>
             </div>
 
             <div class="form-group">
                 <label for="dieutri">Điều trị: </label>
-                <textarea  class="form-control" id="dieutri" #dieutriInput name="dieutri" placeholder="Bác sĩ nhập vào đây..." disabled></textarea>
+                <textarea  class="form-control" id="dieutri" #dieutriInput name="dieutri" placeholder="Bác sĩ nhập vào đây..." ></textarea>
             </div>
 
             <div class="form-group">
@@ -72,7 +72,7 @@
     <div mat-dialog-actions>
         <button mat-button (click)="onClose()" class="close-button">X</button>
         
-        <button class="datlich-btn" mat-button (click)="send()" >Cập nhật</button>
+        <button class="datlich-btn" mat-button (click)="send()" >Hoàn tất</button>
 
         <span *ngIf="successMessage" class="success-message">{{ successMessage }}</span>
     </div> 

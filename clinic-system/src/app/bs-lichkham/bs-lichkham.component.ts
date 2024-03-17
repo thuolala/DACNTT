@@ -9,11 +9,12 @@ import { HoSoCaKham } from 'app/datlich/hoso-cakham.model';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { ChitietLichkhamComponentBS } from './chitiet-lichkham-bs/chitiet-lichkham-bs.component';
+import { QrComponent } from 'app/qr/qr.component';
 
 @Component({
   selector: 'app-bs-lickkham',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, MatTableModule, MatSortModule, ChitietLichkhamComponentBS],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, MatTableModule, MatSortModule, QrComponent],
   templateUrl: './bs-lichkham.component.html',
   styleUrl: './bs-lichkham.component.css'
 })
@@ -22,6 +23,7 @@ export class BsLichkhamComponent implements OnInit{
   hsckList: HoSoCaKham[] = [];
   displayedColumns: string[] = ['id', 'ngaykham', 'loaicakham', 'bacsi', 'trangthai', 'chitiet'];
   dataSource = new MatTableDataSource(this.hsckList);
+
   constructor(private _liveAnnouncer: LiveAnnouncer, private http: HttpClient, private route: ActivatedRoute, public dialog: MatDialog) {}
 
   dataRe: any;
@@ -29,11 +31,12 @@ export class BsLichkhamComponent implements OnInit{
     this.route.paramMap.subscribe(params => {
       this.dataRe = Number(params.get('dataSend'));
       this.fetchHSCK(this.dataRe);
+
     });
   }
 
   fetchHSCK(id: number) {
-    this.http.get<HoSoCaKham[]>('http://localhost:8080/api/hoso-cakham/benhnhan/' + id)
+    this.http.get<HoSoCaKham[]>('http://localhost:8080/api/hoso-cakham/bacsi/' + id)
       .subscribe(data => { 
         this.hsckList = data;
         this.dataSource.data = this.hsckList;
@@ -85,4 +88,19 @@ export class BsLichkhamComponent implements OnInit{
       console.log('The dialog was closed');
     });
   }
+
+  // QR code scanner
+  scanQRCode() {
+    const dialogRef =  this.dialog.open(QrComponent, { disableClose: true});
+    dialogRef.afterClosed().subscribe((submit) => {
+      // if (submit) {
+      //   this.food = submit;
+      // } else {
+      //   this.food = 'Nothing...';
+      // }
+    })
+  }
+
 }
+
+

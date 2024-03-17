@@ -55,17 +55,6 @@
     background-color: black;
   }
   
-  /* Additional styling for the table */
-  /* table {
-    color: black;
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid black;
-  } */
-
 .card-header, .card-body{
   flex-grow: 1;
 }
@@ -210,7 +199,39 @@ th.mat-sort-header{
     color: rgb(202, 108, 108);
 }
 
-  
-  
+ /* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Màu nền đen với độ mờ */
+}
 
+/* Nội dung của modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
 
+/* Nút đóng */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}

@@ -1,10 +1,11 @@
 <div class="container custom">
     <div class="search-filters">
         <form>
-            <input type="text" placeholder="Nhập để tìm kiếm..."  name="searchTerm">
+            <input type="text" placeholder="Nhập để tìm kiếm..."  name="searchTerm" style="width: 100%;">
             <select  name="selectedFilter">
                 <option></option>
             </select>
+            <button style="width: 100%" (click)="scanQRCode()">Quét mã</button>
         </form>
     </div>
 
@@ -64,5 +65,9 @@
  </table>
 </div>
 </div>
+
+
+
+
 
 

@@ -27,10 +27,12 @@ export class LoginComponent {
                         this.router.navigate(["/nguoi-dung/ds-lich-kham"]);
                     }
                     else if(response === "Admin"){
+                        // this.emailService.setEmail(this.email);
                         this.router.navigate(["/admin"]);
                     }
                     else if(response === "Bac si"){
-                        this.router.navigate(["/bac-si/lich-kham"]);
+                        this.emailService.setEmail(this.email);
+                        this.router.navigate(["/bac-si"]);
                     }
                     else if(response === "Tai khoan khong ton tai"){
                         this.thongbao = "Tài khoản không tồn tại!"

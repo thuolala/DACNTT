@@ -64,6 +64,11 @@ public class HoSoCaKhamController {
         return hosocakhamRepository.findByIdBenhnhan(id);
     }
 
+    @GetMapping("/bacsi/{id}")
+    public List<HoSoCaKham> getHSCKByIdBS(@PathVariable int id) {
+        return hosocakhamRepository.findByIdBacsi(id);
+    }
+
     // update 
     @PutMapping("/chinhsua/{id}")
     public HoSoCaKham updateBS(@PathVariable Long id, @RequestBody HoSoCaKham hsAfter) {
@@ -74,6 +79,9 @@ public class HoSoCaKhamController {
         hs.setSdt(hsAfter.getSdt());
         hs.setNamsinh(hsAfter.getNamsinh());
         hs.setLichsubenhly(hsAfter.getLichsubenhly());
+        hs.setChuandoan(hsAfter.getChuandoan());
+        hs.setDieutri(hsAfter.getDieutri());
+        hs.setTrangthai(hsAfter.getTrangthai());
 
         return hosocakhamRepository.save(hs);
     }

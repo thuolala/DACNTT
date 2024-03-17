@@ -1,14 +1,20 @@
 <div class="datlich-modal-container"> 
     <div mat-dialog-content>
-        <h2 style="text-align: center;">Vui lòng tải mã QR </h2>
+        <h2 style="text-align: center;"> Quét mã QR tại đây</h2>
 
-        <div> 
-            <p>AAAAA</p>
-        </div>
+        <ngx-scanner-qrcode #action="scanner"></ngx-scanner-qrcode>
+
+        <!-- data  -->
+        <p [(ngModel)]="qrdata" #qrData>{{ action.data.value }}</p><!-- value -->
+
+        <!-- Loading -->
+        <p *ngIf="action.isLoading">⌛ Loading...</p>
+
+        <!-- start -->
+        <button (click)="onScan()"> TEST</button>
+        <button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop' : 'Start'}}</button>
     </div>
     <div mat-dialog-actions>
-        <button mat-button (click)="onClose()" class="close-button">X</button>
-        <button class="datlich-btn" mat-button (click)="send()">Tải về</button>
-    </div>         
+        <button mat-button (click)=" action.stop() ; onClose()" class="close-button">X</button>
+    </div> 
 </div>
-
