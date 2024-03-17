@@ -1,43 +1,43 @@
 <div class="datlich-modal-container"> 
     <div mat-dialog-content>
-        <h2 style="text-align: center;">Đặt lịch khám</h2>
+        <h2 style="text-align: center;">Thông tin lịch khám</h2>
 
         <form method="post">
 
             <div class="form-group">
                 <label for="loaicakham">Loại ca khám: </label>
-                <input type="text" class="form-control" id="loaicakham"  name="loaicakham" value="{{ data.cakham.loaicakham }}"  disabled>  
+                <input type="text" class="form-control" id="loaicakham" #lckInput name="loaicakham" value="{{ data.hscakham.loaicakham }}"  disabled>  
   
             </div>
             <div class="form-group">
                 <label for="bacsi">Bác sĩ: </label>
-                <input type="text" class="form-control" id="bacsi" #bacsiInput name="bacsi" value="{{ data.cakham.bacsi }}" disabled>  
+                <input type="text" class="form-control" id="bacsi" #bacsiInput name="bacsi" value="{{ data.hscckham.bacsi }}" disabled>  
   
             </div>
 
             <div class="form-group">
                 <label for="benhnhan">Bệnh nhân: </label>
-                <input type="text" class="form-control" id="benhnhan" #benhnhanInput name="benhnhan" value="{{ data.benhnhan.hoten }}" required>    
+                <input type="text" class="form-control" id="benhnhan" #benhnhanInput name="benhnhan" value="{{ data.hscckham.benhnhan }}" required>    
             </div>
 
             <div class="form-group">
                 <label for="sdt">SĐT: </label>
-                <input type="text" class="form-control" id="sdt" #sdtInput name="sdt" value="{{ data.benhnhan.sdt }}" required>    
+                <input type="text" class="form-control" id="sdt" #sdtInput name="sdt" value="{{ data.hscckham.sdt }}" required>    
             </div>
 
             <div class="form-group">
                 <label for="email">Email: </label>
-                <input type="email" class="form-control" id="email"  name="email" value="{{ data.benhnhan.email }}" disabled>    
+                <input type="email" class="form-control" id="email" #emailInput  name="email" value="{{ data.hscckham.email }}" disabled>    
             </div>
 
             <div class="form-group">
                 <label for="namsinh">Năm sinh: </label>
-                <input type="number" class="form-control" id="namsinh" #namsinhInput name="namsinh" value="{{ data.benhnhan.namsinh }}" required>    
+                <input type="number" class="form-control" id="namsinh" #namsinhInput name="namsinh" value="{{ data.hscckham.namsinh }}" required>    
             </div>
 
             <div class="form-group">
                 <label for="lsbenhly">Lịch sử bệnh lý: </label>
-                <textarea #lsbenhlyInput class="form-control" id="lsbenhly" name="lsbenhly" placeholder="Liệt kê"></textarea>
+                <textarea #lsbenhlyInput class="form-control" id="lsbenhly" name="lsbenhly" placeholder="Liệt kê" value="{{ data.hscckham.lichsuBenhly }}"></textarea>
             </div>
 
             <div class="form-group">

@@ -114,10 +114,12 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  height: auto;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
 
   overflow: hidden; 
+  min-height: 300px;
   max-height: 650px; 
   overflow-y: auto; 
 }
@@ -131,6 +133,7 @@
   width: 200px;
   height: 200px;
   margin-top: 20px;
+  margin-left: 20px;
   border-radius: 20px 20px 0 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.263);
   text-align: start;

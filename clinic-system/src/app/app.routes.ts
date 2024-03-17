@@ -9,6 +9,7 @@ import { UserComponent } from './benhnhan/benhnhan.component';
 import { ShiftListComponent } from './ds-lichkham/ds-lichkham.component';
 import { DoctorComponent } from './bacsi/bacsi.component';
 import { AdminComponent } from './admin/admin.component';
+import { BnLichkhamComponent } from './bn-lichkham/bn-lichkham.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/trang-chu', pathMatch: 'full' },
@@ -19,7 +20,8 @@ export const routes: Routes = [
   ]},
   { path: 'nguoi-dung', component: UserComponent,
   children: [
-    { path: 'ds-lich-kham', component: ShiftListComponent }
+    { path: 'ds-lich-kham', component: ShiftListComponent },
+    { path: 'lich-kham/:dataSend', component: BnLichkhamComponent }
   ]
  },
   { path: 'dashboard', component: DashboardComponent },

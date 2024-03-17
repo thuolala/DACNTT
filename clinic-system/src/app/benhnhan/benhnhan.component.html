@@ -14,8 +14,9 @@
     <div class="content">
         <div class="sidebar">
             <ul>
-                <li><a routerLink="/nguoi-dung/ca-kham"><img src="../../assets/calendar.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;">Đặt lịch khám</a></li>
-                <li><a routerLink="#"><img src="../../assets/resume.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Xem lịch khám</a></li>
+              <li>ID: #{{ benhnhan.id }}</li>
+                <li><a routerLink="/nguoi-dung/ds-lich-kham"><img src="../../assets/calendar.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;">Đặt lịch khám</a></li>
+                <li><a [routerLink]="['/nguoi-dung/lich-kham', dataSend]"><img src="../../assets/resume.png" alt="Profile Icon" width="20px" style="margin-right: 10px;">Xem lịch khám</a></li>
                 <!-- <li><a routerLink="#"><img src="../../assets/history.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Xem lịch sử</a></li> -->
                 <li><a routerLink="#"><img src="../../assets/edit.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Chỉnh sửa hồ sơ</a></li>
                 <li><a routerLink=""><img src="../../assets/power-off.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Đăng xuất</a></li>

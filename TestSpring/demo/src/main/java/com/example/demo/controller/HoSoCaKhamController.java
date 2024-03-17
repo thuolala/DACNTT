@@ -55,4 +55,9 @@ public class HoSoCaKhamController {
     public Optional<HoSoCaKham> getHSCaKhamById(@PathVariable Long id) {
         return hosocakhamRepository.findById(id);
     }
+
+    @GetMapping("/benhnhan/{id}")
+    public List<HoSoCaKham> getHSCKByIdBN(@PathVariable int id) {
+        return hosocakhamRepository.findByIdBenhnhan(id);
+    }
 }

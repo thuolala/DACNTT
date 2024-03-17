@@ -25,9 +25,11 @@ export class UserComponent implements OnInit{
     namsinh: 0,
     diachi: ''
   };
+  public dataSend!: number;
   
-  constructor(private emailService: EmailService, private userService: UserService, private benhNhanService: BenhNhanService) {}
 
+  constructor(private emailService: EmailService, private userService: UserService, private benhNhanService: BenhNhanService) {
+  }
   ngOnInit() {
     this.email = this.emailService.getEmail();
     this.getBenhNhan(this.email);
@@ -38,6 +40,7 @@ export class UserComponent implements OnInit{
       .subscribe(
         (data: BenhNhan) => {
           this.benhnhan = data;
+          this.dataSend = data.id;
           this.benhNhanService.setBenhNhan(data);
         },
         (error) => {

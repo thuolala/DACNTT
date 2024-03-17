@@ -1,1 +1,91 @@
-<p>bn-lichkham works!</p>
+<div class="container custom">
+    <div class="search-filters">
+        <form>
+            <input type="text" placeholder="Nhập để tìm kiếm..."  name="searchTerm">
+            <select  name="selectedFilter">
+                <option></option>
+            </select>
+            <!-- <button type="button" (click)="applyFilters()">Lọc</button> -->
+        </form>
+    </div>
+
+    <div class="card-container">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+            class="mat-elevation-z8" >
+ 
+        <!-- Add CSS class for text centering -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            ID
+            </th>
+            <td mat-cell *matCellDef="let hsck" > {{hsck.id}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="ngaykham">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Ngày khám
+            </th>
+            <td mat-cell *matCellDef="let hsck"> {{hsck.ngaykham}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="loaicakham">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Tên ca khám
+            </th>
+            <td mat-cell *matCellDef="let hsck"> {{hsck.loaicakham}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="bacsi">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Bác sĩ
+            </th>
+            <td mat-cell *matCellDef="let hsck"> {{hsck.bacsi}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="trangthai" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header >
+            Trạng thái
+            </th>
+            <td mat-cell *matCellDef="let hsck" [ngClass]="{ 'green-text': hsck.trangthai === 1 , 'gray-text': hsck.trangthai === 0 , 'red-text': hsck.trangthai === 2}"> {{ hsck.trangthai === 0 ? 'Chưa khám' : hsck.trangthai === 1 ? 'Hoàn tất' : 'Đã hủy' }} </td>
+        </ng-container>
+        
+        <!-- Define a separate th for "Chi tiết" without sort functionality -->
+        <ng-container matColumnDef="chitiet" >
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;">
+                Chi tiết
+            </th>
+            <td mat-cell *matCellDef="let hsck" class="centered-cell">
+                <a routerLink="#">
+                    <img src="../../assets/website.png" class="view-detail" alt="Calendar Icon" width="25px">
+                </a>
+            </td>
+        </ng-container>        
+  
+
+   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+   <tr mat-row *matRowDef="let hsck of hsckList; columns: displayedColumns;"></tr>
+ </table>
+</div>
+
+
+
+<!--     
+    <div class="row card-container">
+        <div *ngFor="let cakham of cakhamList" class="card">
+            <div class="card-header">
+                <h2>{{ cakham.loaicakham }}</h2>
+                <p class="text-1">Chuyên khoa: {{ cakham.chuyenkhoa }}</p>
+            </div>
+            <div class="card-body">
+                <p class="text-2">Bác sĩ: {{ cakham.bacsi }}</p>
+                <h3 class="text-3">{{ cakham.chiphi }} đồng</h3>
+                <img class="img-box" src="../../assets/doctor.png" alt="Avatar">
+            </div>
+            <div class="card-footer">
+                <button class="card-btn" mat-button (click)="openModal(cakham)">Đặt lịch</button>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
