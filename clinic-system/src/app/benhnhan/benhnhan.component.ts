@@ -2,17 +2,17 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit  } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { EmailService } from 'app/shared/shared.service';
-import { UserService } from './user.service';
+import { UserService } from './benhnhan.service';
 import { BenhNhan } from './benhnhan.model';
-import { ShiftListComponent } from 'app/shift-list/shift-list.component';
+import { ShiftListComponent } from 'app/ds-lichkham/ds-lichkham.component';
 import { BenhNhanService } from 'app/shared/shared-benhnhan.service';
 
 @Component({
   selector: 'app-user',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, ShiftListComponent],
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+  templateUrl: './benhnhan.component.html',
+  styleUrl: './benhnhan.component.css'
 })
 export class UserComponent implements OnInit{
   email: string = '';

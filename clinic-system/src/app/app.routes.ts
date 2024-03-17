@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './dangnhap/dangnhap.component';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LogupComponent } from './logup/logup.component';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { ShiftListComponent } from './shift-list/shift-list.component';
-import { DoctorComponent } from './doctor/doctor.component';
+import { LogupComponent } from './dangky/dangky.component';
+import { HomeComponent } from './trangchu/trangchu.component';
+import { UserComponent } from './benhnhan/benhnhan.component';
+import { ShiftListComponent } from './ds-lichkham/ds-lichkham.component';
+import { DoctorComponent } from './bacsi/bacsi.component';
 import { AdminComponent } from './admin/admin.component';
 
 export const routes: Routes = [
@@ -19,7 +19,7 @@ export const routes: Routes = [
   ]},
   { path: 'nguoi-dung', component: UserComponent,
   children: [
-    { path: 'ca-kham', component: ShiftListComponent }
+    { path: 'ds-lich-kham', component: ShiftListComponent }
   ]
  },
   { path: 'dashboard', component: DashboardComponent },

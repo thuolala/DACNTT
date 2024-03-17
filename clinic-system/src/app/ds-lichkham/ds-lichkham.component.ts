@@ -3,20 +3,20 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { CaKham } from './cakham.model';
+import { CaKham } from './lichkham.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DatlichComponent } from 'app/datlich/datlich.component';
 import { BenhNhanService } from 'app/shared/shared-benhnhan.service';
-import { BenhNhan } from 'app/user/benhnhan.model';
-import { BacSi } from 'app/doctor/bacsi.model';
-import { BacSiService } from 'app/doctor/doctor.service';
+import { BenhNhan } from 'app/benhnhan/benhnhan.model';
+import { BacSi } from 'app/bacsi/bacsi.model';
+import { BacSiService } from 'app/bacsi/bacsi.service';
 
 @Component({
   selector: 'app-shift-list',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule],
-  templateUrl: './shift-list.component.html',
-  styleUrl: './shift-list.component.css'
+  templateUrl: './ds-lichkham.component.html',
+  styleUrl: './ds-lichkham.component.css'
 })
 export class ShiftListComponent {
   searchTerm: string = '';

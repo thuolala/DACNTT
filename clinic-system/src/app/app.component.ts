@@ -1,7 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './dangnhap/dangnhap.component';
 
 @Component({
   selector: 'app-root',

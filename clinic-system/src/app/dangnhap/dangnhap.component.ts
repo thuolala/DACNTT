@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from './login.service';
+import { AuthenticationService } from './dangnhap.service';
 import { Router } from '@angular/router';
 import { EmailService } from 'app/shared/shared.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './dangnhap.component.html',
+  styleUrls: ['./dangnhap.component.css']
 })
 export class LoginComponent {
 
@@ -24,7 +24,7 @@ export class LoginComponent {
                     this.loginMessage = response;
                     if(response === "Benh nhan"){
                         this.emailService.setEmail(this.email);
-                        this.router.navigate(["/nguoi-dung/ca-kham"]);
+                        this.router.navigate(["/nguoi-dung/ds-lich-kham"]);
                     }
                     else if(response === "Admin"){
                         this.router.navigate(["/admin"]);

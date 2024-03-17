@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LogupService } from './logup.service';
+import { LogupService } from './dangky.service';
 import { Router } from '@angular/router';
 import { HttpResponse } from '@angular/common/http';
 
@@ -7,8 +7,8 @@ import { HttpResponse } from '@angular/common/http';
   selector: 'app-logup',
   // standalone: true,
   // imports: [],
-  templateUrl: './logup.component.html',
-  styleUrls: ['./logup.component.css']
+  templateUrl: './dangky.component.html',
+  styleUrls: ['./dangky.component.css']
 })
 export class LogupComponent {
   hoten: string = '';

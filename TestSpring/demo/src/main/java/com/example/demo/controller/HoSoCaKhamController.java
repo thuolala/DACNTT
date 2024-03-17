@@ -55,7 +55,4 @@ public class HoSoCaKhamController {
     public Optional<HoSoCaKham> getHSCaKhamById(@PathVariable Long id) {
         return hosocakhamRepository.findById(id);
     }
-
-
-
 }

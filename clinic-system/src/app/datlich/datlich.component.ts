@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
 import { QRCodeModule } from 'angularx-qrcode';
 import { SafeUrl } from '@angular/platform-browser';
 import { SendEmailService } from 'app/shared/send-email.service';
-import { BacSiService } from 'app/doctor/doctor.service';
-import { BacSi } from 'app/doctor/bacsi.model';
+import { BacSiService } from 'app/bacsi/bacsi.service';
+import { BacSi } from 'app/bacsi/bacsi.model';
 
 @Component({
   selector: 'app-datlich',

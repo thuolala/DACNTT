@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './dangnhap/dangnhap.component';
 import { AppRoutingModule } from './app.routes';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AuthenticationService } from './login/login.service';
+import { AuthenticationService } from './dangnhap/dangnhap.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LogupComponent } from './logup/logup.component';
+import { LogupComponent } from './dangky/dangky.component';
 
 @NgModule({
   declarations: [

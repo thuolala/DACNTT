@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShiftListComponent } from './shift-list.component';
+import { ShiftListComponent } from './ds-lichkham.component';
 
 describe('ShiftListComponent', () => {
   let component: ShiftListComponent;
