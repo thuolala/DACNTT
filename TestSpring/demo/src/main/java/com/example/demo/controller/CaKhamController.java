@@ -49,7 +49,7 @@ public class CaKhamController {
         return cakhamRepository.findByBacsi(bacsi);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public Optional<CaKham> getCaKhamById(@PathVariable Long id) {
         return cakhamRepository.findById(id);
     }

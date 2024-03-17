@@ -100,7 +100,7 @@ public class HoSoCaKham {
         return this.namsinh;
     }
 
-    public String getLichsu(){
+    public String getLichsubenhly() {
         return this.lichsuBenhly;
     }
 
@@ -161,7 +161,7 @@ public class HoSoCaKham {
         this.namsinh = namsinh;
     }
 
-    public void setLichsu(String lichsu_benhly){
+    public void setLichsubenhly(String lichsu_benhly){
         this.lichsuBenhly = lichsu_benhly;
     }
 

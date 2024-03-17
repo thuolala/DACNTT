@@ -8,16 +8,17 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { HoSoCaKham } from 'app/datlich/hoso-cakham.model';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { ChitietLichkhamComponent } from './chitiet-lichkham/chitiet-lichkham.component';
+import { ChitietLichkhamComponentBS } from './chitiet-lichkham-bs/chitiet-lichkham-bs.component';
 
 @Component({
-  selector: 'app-bn-lichkham',
+  selector: 'app-bs-lickkham',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, MatTableModule, MatSortModule, ChitietLichkhamComponent],
-  templateUrl: './bn-lichkham.component.html',
-  styleUrl: './bn-lichkham.component.css'
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule, MatTableModule, MatSortModule, ChitietLichkhamComponentBS],
+  templateUrl: './bs-lichkham.component.html',
+  styleUrl: './bs-lichkham.component.css'
 })
-export class BnLichkhamComponent implements OnInit{
+
+export class BsLichkhamComponent implements OnInit{
   hsckList: HoSoCaKham[] = [];
   displayedColumns: string[] = ['id', 'ngaykham', 'loaicakham', 'bacsi', 'trangthai', 'chitiet'];
   dataSource = new MatTableDataSource(this.hsckList);
@@ -38,7 +39,6 @@ export class BnLichkhamComponent implements OnInit{
         this.dataSource.data = this.hsckList;
       });
   }
-  
 
   @ViewChild(MatSort)
   sort: MatSort = new MatSort;
@@ -74,10 +74,10 @@ export class BnLichkhamComponent implements OnInit{
     giokham: '',
     trangthai: 0
   };
-  
+
   openModal(hscckham : HoSoCaKham): void {
     this.hs = hscckham;
-    const dialogRef = this.dialog.open(ChitietLichkhamComponent,
+    const dialogRef = this.dialog.open(ChitietLichkhamComponentBS,
       {data: {hscckham}}
       );
 

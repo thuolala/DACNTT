@@ -30,7 +30,7 @@ export class LoginComponent {
                         this.router.navigate(["/admin"]);
                     }
                     else if(response === "Bac si"){
-                        this.router.navigate(["/bac-si"]);
+                        this.router.navigate(["/bac-si/lich-kham"]);
                     }
                     else if(response === "Tai khoan khong ton tai"){
                         this.thongbao = "Tài khoản không tồn tại!"

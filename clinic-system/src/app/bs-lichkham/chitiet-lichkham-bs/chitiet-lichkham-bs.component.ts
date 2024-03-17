@@ -6,7 +6,7 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 import { QRCodeModule } from 'angularx-qrcode';
 import { HoSoCaKham } from 'app/datlich/hoso-cakham.model';
 import { CaKham } from 'app/ds-lichkham/lichkham.model';
-import { CTLKService } from './chitiet-lichkham.service';
+import { CTLKServiceBS } from './chitiet-lichkham-bs.service';
 
 @Component({
   selector: 'app-chitiet-lichkham',
@@ -15,7 +15,7 @@ import { CTLKService } from './chitiet-lichkham.service';
   templateUrl: './chitiet-lichkham.component.html',
   styleUrl: './chitiet-lichkham.component.css'
 })
-export class ChitietLichkhamComponent implements OnInit{
+export class ChitietLichkhamComponentBS implements OnInit{
   successMessage: string = '';
   @ViewChild('lckInput') lckInput!: ElementRef;
   @ViewChild('bacsiInput') bacsiInput!: ElementRef;
@@ -78,7 +78,7 @@ export class ChitietLichkhamComponent implements OnInit{
   public cphi: string = '';
   id_hsck: number = 0;
 
-  constructor(public ctlkService: CTLKService, private http: HttpClient, @Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialog, public dialogRef: MatDialogRef<ChitietLichkhamComponent>){}
+  constructor(public ctlkService: CTLKServiceBS, private http: HttpClient, @Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialog, public dialogRef: MatDialogRef<ChitietLichkhamComponentBS>){}
 
   ngOnInit(): void {
       this.fetchCakham();

@@ -5,9 +5,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.BacSi;
 import com.example.demo.model.HoSoCaKham;
 import com.example.demo.repo.HoSoCaKhamRepository;
 import java.util.List;
@@ -34,7 +37,7 @@ public class HoSoCaKhamController {
         hsck.setSdt(hoSoCaKham.getSdt());
         hsck.setEmail(hoSoCaKham.getEmail());
         hsck.setNamsinh(hoSoCaKham.getNamsinh());
-        hsck.setLichsu(hoSoCaKham.getLichsu());
+        hsck.setLichsubenhly(hoSoCaKham.getLichsubenhly());
         hsck.setChuandoan(hoSoCaKham.getChuandoan());
         hsck.setDieutri(hoSoCaKham.getDieutri());
         hsck.setNgaykham(hoSoCaKham.getNgaykham());
@@ -59,5 +62,19 @@ public class HoSoCaKhamController {
     @GetMapping("/benhnhan/{id}")
     public List<HoSoCaKham> getHSCKByIdBN(@PathVariable int id) {
         return hosocakhamRepository.findByIdBenhnhan(id);
+    }
+
+    // update 
+    @PutMapping("/chinhsua/{id}")
+    public HoSoCaKham updateBS(@PathVariable Long id, @RequestBody HoSoCaKham hsAfter) {
+        HoSoCaKham hs = hosocakhamRepository.findById(id)
+                                        .orElseThrow(() -> new RuntimeException("Ho so not found with id: " + id));
+
+        hs.setBenhnhan(hsAfter.getBenhnhan());
+        hs.setSdt(hsAfter.getSdt());
+        hs.setNamsinh(hsAfter.getNamsinh());
+        hs.setLichsubenhly(hsAfter.getLichsubenhly());
+
+        return hosocakhamRepository.save(hs);
     }
 }

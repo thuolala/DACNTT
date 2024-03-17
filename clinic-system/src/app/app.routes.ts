@@ -10,6 +10,7 @@ import { ShiftListComponent } from './ds-lichkham/ds-lichkham.component';
 import { DoctorComponent } from './bacsi/bacsi.component';
 import { AdminComponent } from './admin/admin.component';
 import { BnLichkhamComponent } from './bn-lichkham/bn-lichkham.component';
+import { BsLichkhamComponent } from './bs-lichkham/bs-lichkham.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/trang-chu', pathMatch: 'full' },
@@ -25,7 +26,10 @@ export const routes: Routes = [
   ]
  },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'bac-si', component: DoctorComponent },
+  { path: 'bac-si', component: DoctorComponent, 
+  children: [
+    {path: 'lich-kham/:dataSend', component: BsLichkhamComponent}
+  ] },
   { path: 'admin', component: AdminComponent },
 ];
 
