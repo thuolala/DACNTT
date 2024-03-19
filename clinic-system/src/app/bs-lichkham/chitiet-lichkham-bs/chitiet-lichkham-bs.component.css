@@ -26,6 +26,19 @@
     margin: 10px;
 }
 
+.print-button{
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    width: 32px;
+    height: 32px;
+    background-image: url('../../../assets/printer.png');
+    background-color: transparent;
+}
+
+
 input, textarea{
     float: inline-end;
     width: 350px;

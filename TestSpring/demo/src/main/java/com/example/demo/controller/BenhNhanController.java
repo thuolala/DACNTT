@@ -12,7 +12,8 @@ import com.example.demo.repo.BenhNhanRepository;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:4200")
+// @CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://192.168.1.65:4200"})
 @RestController
 public class BenhNhanController {
     @Autowired

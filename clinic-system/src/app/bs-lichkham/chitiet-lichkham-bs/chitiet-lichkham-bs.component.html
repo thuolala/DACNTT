@@ -1,5 +1,5 @@
 <div class="datlich-modal-container"> 
-    <div mat-dialog-content>
+    <div mat-dialog-content id="print-hoso">
         <h2 style="text-align: center;">Thông tin lịch khám</h2>
 
         <form method="post">
@@ -37,7 +37,7 @@
 
             <div class="form-group">
                 <label for="lsbenhly">Lịch sử bệnh lý: </label>
-                <textarea #lsbenhlyInput class="form-control" id="lsbenhly" name="lsbenhly" placeholder="Liệt kê" value="{{ data.hscckham.lichsuBenhly }}"></textarea>
+                <textarea #lsbenhlyInput class="form-control" id="lsbenhly" name="lsbenhly" placeholder="Liệt kê" value="{{ data.hscckham.lichsuBenhly }}" [disabled]="setTrangthai"></textarea>
             </div>
 
             <div class="form-group">
@@ -54,12 +54,12 @@
 
             <div class="form-group">
                 <label for="chuandoan">Chuẩn đoán: </label>
-                <textarea class="form-control" id="chuandoan" #chuandoanInput name="chuandoan" placeholder="Bác sĩ nhập vào đây..." ></textarea>
+                <textarea class="form-control" id="chuandoan" #chuandoanInput name="chuandoan" placeholder="Bác sĩ nhập vào đây..." [disabled]="setTrangthai"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="dieutri">Điều trị: </label>
-                <textarea  class="form-control" id="dieutri" #dieutriInput name="dieutri" placeholder="Bác sĩ nhập vào đây..." ></textarea>
+                <textarea  class="form-control" id="dieutri" #dieutriInput name="dieutri" placeholder="Bác sĩ nhập vào đây..." [disabled]="setTrangthai"></textarea>
             </div>
 
             <div class="form-group">
@@ -67,12 +67,21 @@
                 <input  #chiphiInput class="form-control" id="chiphi"  name="chiphi" value="{{ cakham.chiphi }}" disabled>
             </div>
 
+            <div class="form-group">
+                <label for="tthai" >Trạng thái: </label>
+                <input #tthaiInput class="form-control" id="tthai"  name="tthai" value="{{ messageStatus }}" disabled>
+            </div> 
+
         </form>
     </div>
     <div mat-dialog-actions>
+        <button mat-button class="print-button" 
+        printSectionId="print-hoso" 
+        [useExistingCss]="true" ngxPrint></button>
+
         <button mat-button (click)="onClose()" class="close-button">X</button>
         
-        <button class="datlich-btn" mat-button (click)="send()" >Hoàn tất</button>
+        <button class="datlich-btn" mat-button (click)="send()" [disabled]="setTrangthai" #ifTrangthai>Hoàn tất</button>
 
         <span *ngIf="successMessage" class="success-message">{{ successMessage }}</span>
     </div> 

@@ -6,6 +6,7 @@ import { UserService } from './benhnhan.service';
 import { BenhNhan } from './benhnhan.model';
 import { ShiftListComponent } from 'app/ds-lichkham/ds-lichkham.component';
 import { BenhNhanService } from 'app/shared/shared-benhnhan.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -27,11 +28,15 @@ export class UserComponent implements OnInit{
   };
   public dataSend!: number;
   
-
-  constructor(private emailService: EmailService, private userService: UserService, private benhNhanService: BenhNhanService) {
+  constructor(private router: Router, private emailService: EmailService, private userService: UserService, private benhNhanService: BenhNhanService) {
   }
   ngOnInit() {
     this.email = this.emailService.getEmail();
+    // check if login 
+    // NHO UNCOMMENT DOAN NAY 
+    // if(this.email === ""){
+    //   this.router.navigate([""]);
+    // }
     this.getBenhNhan(this.email);
   }
 

@@ -49,7 +49,7 @@
             <td mat-cell *matCellDef="let hsck" [ngClass]="{ 'green-text': hsck.trangthai === 1 , 'gray-text': hsck.trangthai === 0 , 'red-text': hsck.trangthai === 2}"> {{ hsck.trangthai === 0 ? 'Chưa khám' : hsck.trangthai === 1 ? 'Hoàn tất' : 'Đã hủy' }} </td>
         </ng-container>
         
-        <!-- Define a separate th for "Chi tiết" without sort functionality -->
+        <!-- Khong sort cot Chi tiet -->
         <ng-container matColumnDef="chitiet" >
             <th mat-header-cell *matHeaderCellDef style="text-align: center;">
                 Chi tiết

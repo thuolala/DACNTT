@@ -7,11 +7,12 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { HoSoCaKham } from 'app/datlich/hoso-cakham.model';
 import { CaKham } from 'app/ds-lichkham/lichkham.model';
 import { CTLKServiceBS } from './chitiet-lichkham-bs.service';
+import {NgxPrintModule} from 'ngx-print';
 
 @Component({
   selector: 'app-chitiet-lichkham',
   standalone: true,
-  imports: [FormsModule, CommonModule, QRCodeModule],
+  imports: [FormsModule, CommonModule, QRCodeModule, NgxPrintModule],
   templateUrl: './chitiet-lichkham-bs.component.html',
   styleUrl: './chitiet-lichkham-bs.component.css'
 })
@@ -81,12 +82,30 @@ export class ChitietLichkhamComponentBS implements OnInit{
   constructor(public ctlkService: CTLKServiceBS, private http: HttpClient, @Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialog, public dialogRef: MatDialogRef<ChitietLichkhamComponentBS>){}
 
   ngOnInit(): void {
-      this.fetchCakham();
+      this.getCakhamById();
+      this.checkTrangthai();
   }
 
-  fetchCakham() {
+    // disable hoan tat button neu trang thai = 1 
+    setTrangthai: boolean = false; 
+    messageStatus: string = '';
+    @ViewChild('ifTrangthai') ifTrangthai!: ElementRef;
+    @ViewChild('tthaiInput') tthaiInput!: ElementRef;
+
+    checkTrangthai(){
+      if(this.data.hscckham.trangthai == 1){
+        this.setTrangthai = true;
+        this.messageStatus = 'Đã hoàn tất'
+      }
+      else{
+        this.messageStatus = 'Chưa khám'
+      }
+    }
+
+  getCakhamById() {
     const idck = this.data.hscckham.idCakham;
-    this.http.get<CaKham>(`http://localhost:8080/api/cakham/id/${idck}`)
+    const urlCK = 'http://localhost:8080/api/cakham/id/' ;
+    this.http.get<CaKham>(`${urlCK}${idck}`)
       .subscribe(data => { 
         this.cakham = data;
       });

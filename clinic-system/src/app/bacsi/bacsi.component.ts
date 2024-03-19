@@ -5,6 +5,7 @@ import { ShiftListComponent } from 'app/ds-lichkham/ds-lichkham.component';
 import { BacSiService } from './bacsi.service';
 import { EmailService } from 'app/shared/shared.service';
 import { BacSi } from './bacsi.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor',
@@ -24,10 +25,14 @@ export class DoctorComponent implements OnInit{
   };
   public dataSend!: number; 
 
-  constructor(private bsService: BacSiService, private emailService: EmailService){}
+  constructor(private router: Router, private bsService: BacSiService, private emailService: EmailService){}
 
   ngOnInit() {
     this.email = this.emailService.getEmail();
+    // check if login 
+    if(this.email === ""){
+      this.router.navigate([""]);
+    }
     this.getBacSi(this.email);
   }
 

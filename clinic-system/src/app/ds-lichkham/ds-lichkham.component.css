@@ -55,7 +55,6 @@
     background-color: black;
   }
   
-  /* Additional styling for the table */
   table {
     color: black;
     width: 100%;
@@ -99,6 +98,7 @@
 .text-3{
   color: #52cbff;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
 .card-btn:hover {
@@ -126,14 +126,13 @@
 
 .card {
   color: black;
-  flex: 0 1 calc((25% - 40px) - 1px);
   padding: 10px;
   background-color: white;
-  flex-direction: column;
   width: 200px;
-  height: 200px;
+  height: 280px;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 20px 20px 0 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.263);
   text-align: start;
@@ -166,10 +165,21 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media only screen and (max-width: 700px) {
   .card {
       flex: 0 1 calc((50% - 40px) - 1px); 
-      width: 300px;
+      width: 100%;
+  }
+
+  .img-box{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .card {
+      flex: 0 1 calc((50% - 40px) - 1px); 
+      width: 100%;
   }
 
   .img-box{

@@ -108,6 +108,7 @@
   overflow: hidden; 
   max-height: 650px; 
   overflow-y: auto; 
+  overflow-x: auto; 
   border-radius: 20px 20px 0 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.404);
 }

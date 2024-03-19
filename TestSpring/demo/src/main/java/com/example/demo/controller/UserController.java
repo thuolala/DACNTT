@@ -9,7 +9,8 @@ import com.example.demo.model.User;
 import com.example.demo.repo.UserRepository;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:4200")
+// @CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://192.168.1.65:4200"})
 @RestController
 public class UserController {
     @Autowired

@@ -11,10 +11,11 @@ import { DoctorComponent } from './bacsi/bacsi.component';
 import { AdminComponent } from './admin/admin.component';
 import { BnLichkhamComponent } from './bn-lichkham/bn-lichkham.component';
 import { BsLichkhamComponent } from './bs-lichkham/bs-lichkham.component';
+import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/trang-chu', pathMatch: 'full' },
-  { path: 'trang-chu', component: HomeComponent, 
+  { path: 'trang-chu', component: HomeComponent,
   children: [
     { path: 'dang-nhap', component: LoginComponent },
     { path: 'dang-ky', component: LogupComponent }
@@ -31,6 +32,7 @@ export const routes: Routes = [
     {path: 'lich-kham/:dataSend', component: BsLichkhamComponent}
   ] },
   { path: 'admin', component: AdminComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

@@ -30,7 +30,7 @@ public class XacThuc {
     }
 
     public boolean  authenticateAD(String email, String matkhau) {
-        return email.equals("admin") && matkhau.equals(matkhau);
+        return email.equals("blueclinicdemo@gmail.com") && matkhau.equals("123456789");
     }
 }
 

@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.demo.model.BacSi;
 import com.example.demo.model.HoSoCaKham;
 import com.example.demo.repo.HoSoCaKhamRepository;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:4200")
+// @CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://192.168.1.65:4200"})
 @RestController
 @RequestMapping("/api/hoso-cakham")
 public class HoSoCaKhamController {
@@ -73,7 +73,7 @@ public class HoSoCaKhamController {
     @PutMapping("/chinhsua/{id}")
     public HoSoCaKham updateBS(@PathVariable Long id, @RequestBody HoSoCaKham hsAfter) {
         HoSoCaKham hs = hosocakhamRepository.findById(id)
-                                        .orElseThrow(() -> new RuntimeException("Ho so not found with id: " + id));
+                                        .orElseThrow(() -> new RuntimeException("Ho so voi: " + id + " khong ton tai"));
 
         hs.setBenhnhan(hsAfter.getBenhnhan());
         hs.setSdt(hsAfter.getSdt());

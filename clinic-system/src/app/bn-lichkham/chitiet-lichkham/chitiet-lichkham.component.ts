@@ -7,11 +7,12 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { HoSoCaKham } from 'app/datlich/hoso-cakham.model';
 import { CaKham } from 'app/ds-lichkham/lichkham.model';
 import { CTLKService } from './chitiet-lichkham.service';
+import {NgxPrintModule} from 'ngx-print';
 
 @Component({
   selector: 'app-chitiet-lichkham',
   standalone: true,
-  imports: [FormsModule, CommonModule, QRCodeModule],
+  imports: [FormsModule, CommonModule, QRCodeModule, NgxPrintModule],
   templateUrl: './chitiet-lichkham.component.html',
   styleUrl: './chitiet-lichkham.component.css'
 })
@@ -82,7 +83,24 @@ export class ChitietLichkhamComponent implements OnInit{
 
   ngOnInit(): void {
       this.fetchCakham();
+      this.checkTrangthai();
   }
+
+    // disable hoan tat button neu trang thai = 1 
+    setTrangthai: boolean = false; 
+    messageStatus: string = '';
+    @ViewChild('ifTrangthai') ifTrangthai!: ElementRef;
+    @ViewChild('tthaiInput') tthaiInput!: ElementRef;
+
+    checkTrangthai(){
+      if(this.data.hscckham.trangthai == 1){
+        this.setTrangthai = true;
+        this.messageStatus = 'Đã hoàn tất'
+      }
+      else{
+        this.messageStatus = 'Chưa khám'
+      }
+    }
 
   fetchCakham() {
     const idck = this.data.hscckham.idCakham;

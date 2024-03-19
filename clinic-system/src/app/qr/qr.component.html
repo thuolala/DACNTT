@@ -3,16 +3,16 @@
         <h2 style="text-align: center;"> Quét mã QR tại đây</h2>
 
         <ngx-scanner-qrcode #action="scanner"></ngx-scanner-qrcode>
-
-        <!-- data  -->
-        <p [(ngModel)]="qrdata" #qrData>{{ action.data.value }}</p><!-- value -->
-
-        <!-- Loading -->
+        <p >{{ action.data.value }}</p>
         <p *ngIf="action.isLoading">⌛ Loading...</p>
-
-        <!-- start -->
-        <button (click)="onScan()"> TEST</button>
         <button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop' : 'Start'}}</button>
+
+    <!-- <video #videoElement></video>
+    <button (click)="startScan()">Start Scan</button>
+    <button (click)="stopScan()">Stop Scan</button>
+    <p *ngIf="qrData">Scanned QR code: {{ qrData }}</p>
+
+   -->
     </div>
     <div mat-dialog-actions>
         <button mat-button (click)=" action.stop() ; onClose()" class="close-button">X</button>

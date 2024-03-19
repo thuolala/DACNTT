@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.services.XacThuc;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
-
+// @CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://192.168.1.65:4200"})
 public class LoginController {
     @Autowired
     private XacThuc loginService;

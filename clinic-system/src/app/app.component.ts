@@ -1,12 +1,11 @@
 import { Component, OnInit  } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { LoginComponent } from './dangnhap/dangnhap.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

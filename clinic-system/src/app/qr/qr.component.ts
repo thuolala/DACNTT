@@ -3,6 +3,8 @@ import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '
 import { FormsModule, NgModel } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
+import { NgxScannerQrcodeComponent } from 'ngx-scanner-qrcode';
+import { QRScanner } from './qr-scanner';
 
 @Component({
   selector: 'app-qr',
@@ -13,21 +15,32 @@ import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 })
 export class QrComponent implements OnInit{
 
+  qrScanner!: QRScanner;
+  qrData: string | null = null;
+  
   constructor(public dialog: MatDialog, public dialogRef: MatDialogRef<QrComponent>){
-  }
-  qrdata: string = '';
-  @ViewChild('qrData') qrData!: ElementRef;
-  ngOnInit(): void {
-    
+    this.qrScanner = new QRScanner();
   }
 
-  onScan(): void{
-    this.qrdata = this.qrData.nativeElement.value.toString();
-    alert(this.qrdata);
+  startScan() {
+    this.qrScanner.startScan((result) => {
+      console.log('Scanned QR code:', result);
+      this.qrData = result;
+    });
+  }
+
+  stopScan() {
+    this.qrScanner.stopScan();
+    this.qrData = null;
+  }
+
+  ngOnInit(): void {
   }
 
   onClose(): void {
     this.dialogRef.close();
   }
+
+  
 
 }

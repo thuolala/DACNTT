@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChitietLichkhamBsComponent } from './chitiet-lichkham-bs.component';
+import { ChitietLichkhamComponentBS } from './chitiet-lichkham-bs.component';
 
 describe('ChitietLichkhamBsComponent', () => {
-  let component: ChitietLichkhamBsComponent;
-  let fixture: ComponentFixture<ChitietLichkhamBsComponent>;
+  let component: ChitietLichkhamComponentBS;
+  let fixture: ComponentFixture<ChitietLichkhamComponentBS>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ChitietLichkhamBsComponent]
+      imports: [ChitietLichkhamComponentBS]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ChitietLichkhamBsComponent);
+    fixture = TestBed.createComponent(ChitietLichkhamComponentBS);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
