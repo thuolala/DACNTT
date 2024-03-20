@@ -21,7 +21,8 @@ export class DoctorComponent implements OnInit{
     hoten: '',
     sdt: '',
     email: '',
-    matkhau: ''
+    matkhau: '',
+    chuyenkhoa: ''
   };
   public dataSend!: number; 
 

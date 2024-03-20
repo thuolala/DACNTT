@@ -8,8 +8,8 @@ import { HoSoCaKham } from 'app/datlich/hoso-cakham.model';
 })
 export class CTLKService {
 
-    private url = 'http://localhost:8080/api/hoso-cakham/chinhsua';
-    constructor(private http: HttpClient) { }
+  private url = 'http://localhost:8080/api/hoso-cakham/chinhsua';
+  constructor(private http: HttpClient) { }
 
   capnhat(hsck: HoSoCaKham): Observable<HoSoCaKham> {
     const idhs = hsck.id;

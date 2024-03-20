@@ -6,7 +6,7 @@
         </div>
         <nav>
           <ul>
-            <li></li>
+            <li>Xin chào Admin!</li>
           </ul>
         </nav>
     </header>
@@ -14,13 +14,26 @@
     <div class="content">
         <div class="sidebar">
             <ul>
-                <li><a routerLink="/nguoi-dung/ca-kham"><img src="../../assets/menu.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;">Tổng quan</a></li>
-                <li><a routerLink="/nguoi-dung/ca-kham"><img src="../../assets/resume.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;">Lịch khám</a></li>
-                <li><a routerLink="#"><img src="../../assets/medical-team.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Bác sĩ</a></li>
-                <li><a routerLink="#"><img src="../../assets/patient.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Bệnh nhân</a></li>
-                <li><a routerLink="#"><img src="../../assets/history.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Lịch sử khám bệnh</a></li>
-                <li><a routerLink="#"><img src="../../assets/graph.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Thống kê</a></li>
-                <li><a routerLink=""><img src="../../assets/power-off.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Đăng xuất</a></li>
+              <a routerLink="/admin/tong-quan" class="hidden-sidebar"><img src="../../assets/menu.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;"></a>
+              <li><a routerLink="/admin/tong-quan"><img src="../../assets/menu.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;">Tổng quan</a></li>
+              
+              <a routerLink="/admin/ql-lichkham" class="hidden-sidebar"><img src="../../assets/resume.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;"></a>
+              <li><a routerLink="/admin/ql-lichkham"><img src="../../assets/resume.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;">Lịch khám</a></li>
+                
+              <a routerLink="/admin/ql-bacsi" class="hidden-sidebar"><img src="../../assets/medical-team.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;"></a>
+              <li><a routerLink="/admin/ql-bacsi"><img src="../../assets/medical-team.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Bác sĩ</a></li>
+                
+              <a routerLink="/admin/ql-benhnhan" class="hidden-sidebar"><img src="../../assets/patient.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;"></a>
+              <li><a routerLink="/admin/ql-benhnhan"><img src="../../assets/patient.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Bệnh nhân</a></li>
+                
+              <a routerLink="/admin/ql-lichsu" class="hidden-sidebar"><img src="../../assets/history.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;"></a>
+              <li><a routerLink="/admin/ql-lichsu"><img src="../../assets/history.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Lịch sử khám bệnh</a></li>
+               
+              <!-- <a routerLink="#" class="hidden-sidebar"><img src="../../assets/graph.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;"></a>
+              <li><a routerLink="#"><img src="../../assets/graph.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Thống kê</a></li> -->
+               
+              <a routerLink="" class="hidden-sidebar"><img src="../../assets/power-off.png" alt="Calendar Icon" width="20px" style="margin-right: 10px;"></a>
+              <li><a routerLink=""><img src="../../assets/power-off.png" alt="Profile Icon"  width="20px" width="20px" style="margin-right: 10px;">Đăng xuất</a></li>
               </ul>
         </div>        
 

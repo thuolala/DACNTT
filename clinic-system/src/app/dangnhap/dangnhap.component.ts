@@ -28,7 +28,7 @@ export class LoginComponent {
                     }
                     else if(response === "Admin"){
                         // this.emailService.setEmail(this.email);
-                        this.router.navigate(["/admin"]);
+                        this.router.navigate(["/admin/tong-quan"]);
                     }
                     else if(response === "Bac si"){
                         this.emailService.setEmail(this.email);

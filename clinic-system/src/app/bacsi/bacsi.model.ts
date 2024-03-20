@@ -3,6 +3,7 @@ export interface BacSi {
     hoten: string;
     sdt: string,
     email: string, 
+    chuyenkhoa: string,
     matkhau: string
   }
   

@@ -1,0 +1,51 @@
+<div class="datlich-modal-container"> 
+    <div mat-dialog-content id="print-hoso">
+        <h2 style="text-align: center;">Thông tin bác sĩ</h2>
+
+        <form method="post">
+
+            <div class="form-group">
+                <label for="hoten">Họ tên: </label>
+                <input type="text" class="form-control" id="hoten" #hotenInput name="hoten" value="{{ data.bacsi.hoten }}"  disabled>  
+            </div>
+
+            <div class="form-group">
+                <label for="sdt">SĐT: </label>
+                <input type="text" class="form-control" id="sdt" #sdtInput name="sdt" value="{{ data.bacsi.sdt }}" required>  
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="text" class="form-control" id="email" #emailInput name="email" value="{{ data.bacsi.email }}" disabled>    
+            </div>
+
+            <div class="form-group">
+                <label for="chuyenkhoa">Chuyên khoa: </label>
+                <input type="text" class="form-control" id="chuyenkhoa" #chuyenkhoaInput name="chuyenkhoa" value="{{ data.bacsi.chuyenkhoa }}" disabled>    
+            </div>
+
+            <div class="form-group">
+                <label for="matkhau">Mật khẩu: </label>
+                <input type="text" class="form-control" id="matkhau" #matkhauInput  name="matkhau" value="{{ data.bacsi.matkhau }}" required>    
+            </div>          
+
+        </form>
+    </div>
+    <div mat-dialog-actions>
+
+        <button mat-button (click)="onClose()" class="close-button">X</button>
+        
+        <button class="datlich-btn" mat-button (click)="send()">Cập nhật</button>
+
+        <button class="delete-btn" mat-button>Xóa</button>
+
+        <span *ngIf="successMessage" class="success-message">{{ successMessage }}</span>
+    </div> 
+
+    <div class="qr-container">
+        <img #qrCode>
+
+        <!-- <qrcode (qrCodeURL)="onChangeURL($event)" [qrdata]="id_hsck" [width]="200" [errorCorrectionLevel]="'M'"></qrcode> -->
+    </div>
+    
+</div>

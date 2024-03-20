@@ -236,3 +236,7 @@ th.mat-sort-header{
   color: #000;
   text-decoration: none;
 }
+
+.finished_row{
+  background-color: #cce4d3;
+}

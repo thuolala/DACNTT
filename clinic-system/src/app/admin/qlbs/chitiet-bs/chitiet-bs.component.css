@@ -1,0 +1,155 @@
+
+.datlich-modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: auto;
+    justify-content: space-between;
+
+    height: auto; 
+    overflow-y: auto; 
+    flex-wrap: wrap;
+}
+
+.close-button{
+    border: none;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.print-button{
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    width: 32px;
+    height: 32px;
+    background-image: url('../../../../assets/printer.png');
+    background-color: transparent;
+}
+
+input, textarea{
+    float: inline-end;
+    width: 350px;
+}
+
+input{
+    height: 30px;
+}
+
+textarea{
+    height: 50px;
+}
+
+label {
+    width: 150px; 
+    display: inline-block;
+    text-align: left;
+    background-color: transparent;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.datlich-btn {
+    border: none !important;
+    margin-right: 20px;
+    width: 25%; 
+    background-color: #90cca1; 
+    color: white; 
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.datlich-btn:hover {
+    background-color: black;
+}
+
+.delete-btn{
+    border: none !important;
+    margin-right: 20px;
+    width: 25%; 
+    background-color: #c38989; 
+    color: white; 
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: black;
+}
+
+.huy-btn {
+    width: 25%; 
+    background-color: #8f8f8f; 
+    color: white; 
+    border: 1px solid #52cbff; 
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.huy-btn:hover {
+    background-color: black;
+}
+
+.success-message{
+    color: white;
+    width: 150px;
+    background-color: rgb(105, 199, 105);
+    float: inline-end;
+    text-align: center;
+}
+  
+.qr-container {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.qr-container .qrcode {
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.download-btn{
+    width: 100%;
+    margin-left: auto; 
+    background-color: #52ffab;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: black;
+}
+

@@ -12,7 +12,8 @@ export class BacSiService {
         hoten: '',
         sdt: '',
         email: '',
-        matkhau: ''
+        matkhau: '',
+        chuyenkhoa: ''
     };
     
     private url = 'http://localhost:8080/api/bacsi';

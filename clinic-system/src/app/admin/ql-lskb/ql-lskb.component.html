@@ -1,0 +1,66 @@
+<div class="container custom">
+    <div class="search-filters">
+        <form>
+            <input type="text" placeholder="Nhập để tìm kiếm..."  name="searchTerm">
+            <select  name="selectedFilter">
+                <option></option>
+            </select>
+        </form>
+    </div>
+
+    <div class="card-container">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+            class="mat-elevation-z8" >
+ 
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            ID
+            </th>
+            <td mat-cell *matCellDef="let hsck" > {{hsck.id}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="ngaykham">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Ngày khám
+            </th>
+            <td mat-cell *matCellDef="let hsck"> {{hsck.ngaykham}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="loaicakham">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Tên ca khám
+            </th>
+            <td mat-cell *matCellDef="let hsck"> {{hsck.loaicakham}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="bacsi">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            Bác sĩ
+            </th>
+            <td mat-cell *matCellDef="let hsck"> {{hsck.bacsi}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="trangthai" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header >
+            Trạng thái
+            </th>
+            <td mat-cell *matCellDef="let hsck" [ngClass]="{ 'green-text': hsck.trangthai === 1 , 'gray-text': hsck.trangthai === 0 , 'red-text': hsck.trangthai === 2}"> {{ hsck.trangthai === 0 ? 'Chưa khám' : hsck.trangthai === 1 ? 'Hoàn tất' : 'Đã hủy' }} </td>
+        </ng-container>
+        
+        <!-- <ng-container matColumnDef="chitiet" >
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;">
+                Chi tiết
+            </th>
+            <td mat-cell *matCellDef="let hsck" class="centered-cell">
+                <img src="../../assets/website.png" class="view-detail" alt="Calendar Icon" width="25px" >
+            </td>
+        </ng-container>         -->
+  
+
+   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+   <tr mat-row *matRowDef="let hsck of hsckList; columns: displayedColumns;" [ngClass]="{'finished_row': hsck.trangthai == 1 }"></tr>
+ </table>
+</div>
+</div>
+
+

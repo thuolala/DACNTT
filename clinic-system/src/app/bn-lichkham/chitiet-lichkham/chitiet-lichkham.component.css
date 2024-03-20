@@ -70,11 +70,11 @@ label {
 }
 
 .datlich-btn {
+    border: none !important;
     margin-right: 20px;
     width: 25%; 
-    background-color: #68be6e; 
+    background-color: #90cca1; 
     color: white; 
-    border: 1px solid #52ff5e; 
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
@@ -86,10 +86,10 @@ label {
 }
 
 .huy-btn {
+    border: none !important;
     width: 25%; 
     background-color: #8f8f8f; 
     color: white; 
-    border: 1px solid #52cbff; 
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
@@ -125,9 +125,9 @@ label {
 .download-btn{
     width: 100%;
     margin-left: auto; 
-    background-color: #52cbff;
+    background-color: #52ffab;
     color: white;
-    border: none;
+    border: none !important;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;

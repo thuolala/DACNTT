@@ -12,6 +12,11 @@ import { AdminComponent } from './admin/admin.component';
 import { BnLichkhamComponent } from './bn-lichkham/bn-lichkham.component';
 import { BsLichkhamComponent } from './bs-lichkham/bs-lichkham.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+import { TongquanComponent } from './admin/tongquan/tongquan.component';
+import { QlbsComponent } from './admin/qlbs/qlbs.component';
+import { QlbnComponent } from './admin/qlbn/qlbn.component';
+import { QllkComponent } from './admin/qllk/qllk.component';
+import { QlLskbComponent } from './admin/ql-lskb/ql-lskb.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/trang-chu', pathMatch: 'full' },
@@ -26,12 +31,19 @@ export const routes: Routes = [
     { path: 'lich-kham/:dataSend', component: BnLichkhamComponent }
   ]
  },
-  { path: 'dashboard', component: DashboardComponent },
   { path: 'bac-si', component: DoctorComponent, 
   children: [
     {path: 'lich-kham/:dataSend', component: BsLichkhamComponent}
   ] },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent, 
+  children: [
+    {path: 'tong-quan', component: TongquanComponent}, 
+    {path: 'ql-bacsi', component: QlbsComponent},
+    {path: 'ql-benhnhan', component: QlbnComponent},
+    {path: 'ql-lichkham', component: QllkComponent},
+    {path: 'ql-lichsu', component: QlLskbComponent}
+  ] 
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 

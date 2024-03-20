@@ -1,0 +1,30 @@
+<div class="container custom">
+    <div class="search-filters">
+        <form>
+            <input type="text" placeholder="Nhập để tìm kiếm..." [(ngModel)]="searchTerm" name="searchTerm">
+            <select [(ngModel)]="selectedFilter" name="selectedFilter" (ngModelChange)="applyFilters()">
+                <option value="">Tất cả</option>
+                <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+            </select>
+
+            <button style="width: auto; border-radius: 5px;" (click)="them()">Thêm</button>
+        </form>
+    </div>
+    
+    <div class="row card-container">
+        <div *ngFor="let cakham of filteredCakhamList" class="card">
+            <div class="card-header">
+                <h2>{{ cakham.loaicakham }}</h2>
+                <p class="text-1">Chuyên khoa: {{ cakham.chuyenkhoa }}</p>
+            </div>
+            <div class="card-body">
+                <p class="text-2">Bác sĩ: {{ cakham.bacsi }}</p>
+                <h3 class="text-3">{{ cakham.chiphi }} đồng</h3>
+                <img class="img-box" src="../../assets/doctor.png" alt="Avatar">
+            </div>
+            <div class="card-footer">
+                <button class="card-btn" mat-button (click)="xoa(cakham)">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>

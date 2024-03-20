@@ -61,7 +61,7 @@ label {
     width: 25%; 
     background-color: #52cbff; 
     color: white; 
-    border: 1px solid #52cbff; 
+    border: none !important;
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
@@ -73,10 +73,10 @@ label {
 }
 
 .huy-btn {
+    border: none !important;
     width: 25%; 
     background-color: #8f8f8f; 
-    color: white; 
-    border: 1px solid #52cbff; 
+    color: white;  
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
@@ -110,6 +110,7 @@ label {
 }
 
 .download-btn{
+    border: none !important;
     width: 100%;
     margin-left: auto; 
     background-color: #52cbff;

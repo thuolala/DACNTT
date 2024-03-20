@@ -1,0 +1,60 @@
+<div class="datlich-modal-container"> 
+    <div mat-dialog-content id="print-hoso">
+        <h2 style="text-align: center;">Thêm lịch khám</h2>
+
+        <form method="post">
+            <div class="form-group" > 
+                <label for="chuyenkhoa">Loại ca khám: </label>
+                <select #lckInpput [(ngModel)]="selectedFilter" name="selectedFilter">
+                    <option *ngFor="let lck of lckList" [value]="lck">{{ lck }}</option>
+                </select>    
+            </div>
+
+            <div class="form-group"> 
+                <label for="chuyenkhoa">Chuyên khoa: </label>
+                <select #ckInpput name="selectedFilter" class="form-control" id="chuyenkhoa" #chuyenkhoaInput name="chuyenkhoa" required>
+                    <option selected value="Nội">Nội</option>
+                    <option value="Ngoại">Ngoại</option>
+                </select>
+            </div>
+
+            <!-- <div class="form-group">
+                <label #idbsInpput for="chuyenkhoa">ID Bác sĩ: </label>
+                <select [(ngModel)]="selectedId" name="selectedId" required >
+                    <option *ngFor="let idbs of idbsList" [value]="idbs">{{ idbs }}</option>
+                </select>
+            </div> -->
+            
+            <div class="form-group">
+                <label for="bacsi">ID Bác sĩ: </label>
+                <input type="text" class="form-control" id="idbs" #idbsInpput name="idbs" required>
+            </div>
+              
+            <div class="form-group">
+                <label for="bacsi">Bác sĩ: </label>
+                <input type="text" class="form-control" id="bacsi" #bacsiInput name="bacsi" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="chiphi">Chi phí: </label>
+                <input type="text" class="form-control" id="chiphi" #chiphiInput name="chiphi" required>    
+            </div>  
+
+        </form>
+    </div>
+    <div mat-dialog-actions>
+
+        <button mat-button (click)="onClose()" class="close-button">X</button>
+        
+        <button class="datlich-btn" mat-button (click)="send()">Thêm</button>
+
+        <span *ngIf="successMessage" class="success-message">{{ successMessage }}</span>
+    </div> 
+
+    <div class="qr-container">
+        <img #qrCode>
+
+        <!-- <qrcode (qrCodeURL)="onChangeURL($event)" [qrdata]="id_hsck" [width]="200" [errorCorrectionLevel]="'M'"></qrcode> -->
+    </div>
+    
+</div>

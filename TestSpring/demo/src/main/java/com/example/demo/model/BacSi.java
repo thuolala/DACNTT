@@ -22,6 +22,9 @@ public class BacSi {
 
     @Column(nullable = false, unique = true, name = "email")
     private String email;
+
+    @Column(nullable = false, unique = true, name = "chuyenkhoa")
+    private String chuyenkhoa;
     
     @Column(nullable = false, name = "matkhau")
     private String matkhau;
@@ -43,6 +46,10 @@ public class BacSi {
         return this.email;
     }
 
+    public String getChuyenkhoa() {
+        return this.chuyenkhoa;
+    }
+
     public String getMatkhau() {
         return this.matkhau;
     }
@@ -58,6 +65,10 @@ public class BacSi {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setChuyenkhoa(String chuyenkhoa) {
+        this.chuyenkhoa = chuyenkhoa;
     }
 
     public void setMatkhau(String matkhau) {

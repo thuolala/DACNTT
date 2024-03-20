@@ -72,7 +72,7 @@ export class ChitietLichkhamComponentBS implements OnInit{
     loaicakham: '',
     chuyenkhoa: '',
     idBacsi: 0,
-    bacsi: 0,
+    bacsi: '',
     chiphi: ''
   }; 
 

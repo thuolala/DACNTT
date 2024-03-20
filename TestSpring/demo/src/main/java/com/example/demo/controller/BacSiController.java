@@ -54,7 +54,6 @@ public class BacSiController {
                                         .orElseThrow(() -> new RuntimeException("Bac si not found with id: " + id));
 
         bs.setSdt(bsAfter.getSdt());
-        bs.setEmail(bsAfter.getEmail());
         bs.setMatkhau(bsAfter.getMatkhau());
 
         return bsRepository.save(bs);

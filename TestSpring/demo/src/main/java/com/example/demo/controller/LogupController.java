@@ -26,7 +26,7 @@ public class LogupController {
 
     @PostMapping("/api/logup")
     public ResponseEntity<?> logup(@RequestBody BenhNhanDTO benhNhanDTO) {
-        // Tạo đối tượng BenhNhan từ DTO
+        // 
         BenhNhan benhNhan = new BenhNhan();
         benhNhan.setHoten(benhNhanDTO.getHoten());
         benhNhan.setSdt(benhNhanDTO.getSdt());
@@ -35,13 +35,13 @@ public class LogupController {
         benhNhan.setNamsinh(benhNhanDTO.getNamsinh());
         benhNhan.setDiachi(benhNhanDTO.getDiachi());
 
-        // Tạo đối tượng TaiKhoan từ DTO
+        // 
         TaiKhoan taiKhoan = new TaiKhoan();
         taiKhoan.setEmail(benhNhanDTO.getEmail());
         taiKhoan.setMatkhau(benhNhanDTO.getMatkhau());
         taiKhoan.setQuyen(0);
 
-        // Lưu vào cơ sở dữ liệu
+        // 
         tkRepository.save(taiKhoan);
         bnRepository.save(benhNhan);
 

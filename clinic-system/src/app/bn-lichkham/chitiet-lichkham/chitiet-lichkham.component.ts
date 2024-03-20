@@ -72,7 +72,7 @@ export class ChitietLichkhamComponent implements OnInit{
     loaicakham: '',
     chuyenkhoa: '',
     idBacsi: 0,
-    bacsi: 0,
+    bacsi: '',
     chiphi: ''
   }; 
 
@@ -82,7 +82,7 @@ export class ChitietLichkhamComponent implements OnInit{
   constructor(public ctlkService: CTLKService, private http: HttpClient, @Inject(MAT_DIALOG_DATA) public data: any, public dialog: MatDialog, public dialogRef: MatDialogRef<ChitietLichkhamComponent>){}
 
   ngOnInit(): void {
-      this.fetchCakham();
+      this.getCakham();
       this.checkTrangthai();
   }
 
@@ -102,7 +102,7 @@ export class ChitietLichkhamComponent implements OnInit{
       }
     }
 
-  fetchCakham() {
+  getCakham() {
     const idck = this.data.hscckham.idCakham;
     this.http.get<CaKham>(`http://localhost:8080/api/cakham/id/${idck}`)
       .subscribe(data => { 

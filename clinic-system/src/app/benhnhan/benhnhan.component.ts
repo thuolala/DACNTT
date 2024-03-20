@@ -33,10 +33,9 @@ export class UserComponent implements OnInit{
   ngOnInit() {
     this.email = this.emailService.getEmail();
     // check if login 
-    // NHO UNCOMMENT DOAN NAY 
-    // if(this.email === ""){
-    //   this.router.navigate([""]);
-    // }
+    if(this.email === ""){
+      this.router.navigate([""]);
+    }
     this.getBenhNhan(this.email);
   }
 

@@ -74,7 +74,8 @@ export class DatlichComponent {
     hoten: '',
     sdt: '',
     email: '',
-    matkhau: ''
+    matkhau: '',
+    chuyenkhoa: ''
   }
   
   constructor(public dialog: MatDialog, public dialogRef: MatDialogRef<DatlichComponent>, @Inject(MAT_DIALOG_DATA) public data: any, public dlService: DatlichService, private sendemailService: SendEmailService, public bsService: BacSiService) { }

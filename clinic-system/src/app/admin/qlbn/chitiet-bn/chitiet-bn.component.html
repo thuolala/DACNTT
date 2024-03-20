@@ -1,0 +1,56 @@
+<div class="datlich-modal-container"> 
+    <div mat-dialog-content id="print-hoso">
+        <h2 style="text-align: center;">Thông tin bệnh nhân</h2>
+
+        <form method="post">
+
+            <div class="form-group">
+                <label for="hoten">Họ tên: </label>
+                <input type="text" class="form-control" id="hoten" #hotenInput name="hoten" value="{{ data.benhnhan.hoten }}"  disabled>  
+            </div>
+
+            <div class="form-group">
+                <label for="sdt">SĐT: </label>
+                <input type="text" class="form-control" id="sdt" #sdtInput name="sdt" value="{{ data.benhnhan.sdt }}" disabled>  
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="text" class="form-control" id="email" #emailInput name="email" value="{{ data.benhnhan.email }}" disabled>    
+            </div>
+
+            <div class="form-group">
+                <label for="gioitnh">Giới tính: </label>
+                <input type="text" class="form-control" id="gioitnh" #gioitnhInput name="gioitnh" value="{{ data.benhnhan.gioitinh === 0 ? 'Nam' : 'Nữ'}}" disabled>    
+            </div>
+
+            <div class="form-group">
+                <label for="namsinh">Năm sinh: </label>
+                <input type="number" class="form-control" id="namsinh" #namsinhInput name="namsinh" value="{{ data.benhnhan.namsinh }}" disabled>    
+            </div>
+
+            <div class="form-group">
+                <label for="diachi">Địa chỉ: </label>
+                <input type="text" class="form-control" id="diachi" #namsinhInput name="diachi" value="{{ data.benhnhan.diachi }}" disabled>    
+            </div>
+
+        </form>
+    </div>
+    <div mat-dialog-actions>
+
+        <button mat-button (click)="onClose()" class="close-button">X</button>
+        
+        <!-- <button class="datlich-btn" mat-button (click)="send()">Cập nhật</button>
+
+        <button class="delete-btn" mat-button>Xóa</button> -->
+<!-- 
+        <span *ngIf="successMessage" class="success-message">{{ successMessage }}</span> -->
+    </div> 
+
+    <div class="qr-container">
+        <img #qrCode>
+
+        <!-- <qrcode (qrCodeURL)="onChangeURL($event)" [qrdata]="id_hsck" [width]="200" [errorCorrectionLevel]="'M'"></qrcode> -->
+    </div>
+    
+</div>

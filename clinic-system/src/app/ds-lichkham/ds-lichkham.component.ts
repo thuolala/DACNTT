@@ -44,14 +44,14 @@
   
 //   constructor(private http: HttpClient, public dialog: MatDialog, private benhNhanService: BenhNhanService, private bsService: BacSiService) { }
   
-//   fetchOptions() {
+//   getOptions() {
 //     this.http.get<string[]>('http://localhost:8080/api/loaicakham')
 //       .subscribe(options => {
 //         this.options = options; 
 //       });
 //   }
 
-//   fetchCakham() {
+//   getCakham() {
 //     this.http.get<CaKham[]>('http://localhost:8080/api/cakham')
 //       .subscribe(data => {
 //         this.cakhamList = data;
@@ -73,8 +73,8 @@
 //   }
 
 //   ngOnInit(): void {
-//     this.fetchOptions(); 
-//     this.fetchCakham();
+//     this.getOptions(); 
+//     this.getCakham();
 //   }
 
 //   applyFilters() {
@@ -110,18 +110,18 @@ export class ShiftListComponent {
 
   constructor(private http: HttpClient, public dialog: MatDialog, private benhNhanService: BenhNhanService, private bsService: BacSiService) { }
   
-  fetchOptions() {
+  getOptions() {
     this.http.get<string[]>('http://localhost:8080/api/loaicakham')
       .subscribe(options => {
         this.options = options; 
       });
   }
 
-  fetchCakham() {
+  getCakham() {
     this.http.get<CaKham[]>('http://localhost:8080/api/cakham')
       .subscribe(data => {
         this.cakhamList = data;
-        this.filteredCakhamList = [...data]; // Initialize filtered list with all items
+        this.filteredCakhamList = [...data]; 
       });
   }
 
@@ -140,7 +140,8 @@ export class ShiftListComponent {
     hoten: '',
     sdt: '',
     email: '',
-    matkhau: ''
+    matkhau: '',
+    chuyenkhoa: ''
   };
    openModal(cakham : CaKham): void {
     this.bn = this.benhNhanService.getBenhNhan()
@@ -156,8 +157,8 @@ export class ShiftListComponent {
   }
 
   ngOnInit(): void {
-    this.fetchOptions(); 
-    this.fetchCakham();
+    this.getOptions(); 
+    this.getCakham();
   }
 
   applyFilters() {

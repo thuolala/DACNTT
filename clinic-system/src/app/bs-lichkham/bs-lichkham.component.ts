@@ -144,6 +144,8 @@ export class BsLichkhamComponent implements OnInit{
     this.dataSource.sort = this.sort;
 
     this.readTXT();
+
+    this.readTimer = setInterval(() => this.readTXT(), this.readInterval);
   }
 
   announceSortChange(sortState: Sort) {

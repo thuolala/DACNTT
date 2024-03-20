@@ -12,7 +12,6 @@
         <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
             class="mat-elevation-z8" >
  
-        <!-- Add CSS class for text centering -->
         <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>
             ID
@@ -60,7 +59,7 @@
   
 
    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-   <tr mat-row *matRowDef="let hsck of hsckList; columns: displayedColumns;"></tr>
+   <tr mat-row *matRowDef="let hsck of hsckList; columns: displayedColumns;" [ngClass]="{'finished_row': hsck.trangthai == 1 }"></tr>
  </table>
 </div>
 
